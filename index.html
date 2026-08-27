@@ -1,0 +1,1018 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Your Name — AI Engineer</title>
+<meta name="description" content="AI Engineer specializing in LLMs, RAG, computer vision, embedded AI, and cloud infrastructure. Portfolio of production systems, award-winning hardware, and independent research.">
+<meta property="og:title" content="Your Name — AI Engineer">
+<meta property="og:description" content="LLMs, RAG, computer vision, embedded AI, agents, and cloud infrastructure — projects from ESP32 edge devices to terabyte-scale RAG systems.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%230a0f0d'/%3E%3Ctext x='50' y='67' font-size='52' font-family='monospace' font-weight='700' fill='%233ee08a' text-anchor='middle'%3E%3E_%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0a0f0d;
+  --bg-soft:#0d1310;
+  --surface:#121a17;
+  --surface-2:#161f1b;
+  --border:#20302a;
+  --border-strong:#2c4038;
+  --text:#eaf2ec;
+  --text-dim:#9fb3a8;
+  --text-faint:#7a9184;
+  --accent:#3ee08a;
+  --accent-2:#8ff5c3;
+  --accent-soft:#12301f;
+  --accent-soft-border:#1f4a32;
+  --amber:#f0b25e;
+  --amber-soft:#2f2211;
+  --font-display:'Space Grotesk',-apple-system,sans-serif;
+  --font-body:'Inter',-apple-system,sans-serif;
+  --font-mono:'JetBrains Mono',ui-monospace,monospace;
+  --nav-h:68px;
+  --radius:14px;
+  --radius-sm:8px;
+  --ease:cubic-bezier(.22,.9,.3,1);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background:var(--bg);
+  color:var(--text);
+  font-family:var(--font-body);
+  font-size:16px;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+body::before{
+  content:'';
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  z-index:0;
+  background-image:
+    linear-gradient(rgba(62,224,138,0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(62,224,138,0.035) 1px, transparent 1px);
+  background-size:44px 44px;
+  mask-image:radial-gradient(ellipse 80% 50% at 50% 0%, #000 20%, transparent 75%);
+}
+img,video{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+ul{list-style:none}
+button{font:inherit;color:inherit;background:none;border:none;cursor:pointer}
+h1,h2,h3,h4{font-family:var(--font-display);font-weight:600;line-height:1.15;letter-spacing:-0.01em}
+.container{max-width:960px;margin:0 auto;padding:0 24px;position:relative;z-index:1}
+section{position:relative;z-index:1}
+::selection{background:var(--accent-soft);color:var(--accent-2)}
+a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
+.skip-link{
+  position:absolute;left:16px;top:-60px;
+  background:var(--accent);color:#06130c;
+  padding:10px 16px;border-radius:8px;font-family:var(--font-mono);font-size:13px;font-weight:600;
+  z-index:200;transition:top .25s var(--ease);
+}
+.skip-link:focus{top:16px}
+
+.site-nav{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  height:var(--nav-h);
+  display:flex;align-items:center;
+  background:rgba(10,15,13,0.72);
+  backdrop-filter:blur(14px) saturate(140%);
+  -webkit-backdrop-filter:blur(14px) saturate(140%);
+  border-bottom:1px solid var(--border);
+}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;width:100%}
+.brand{
+  font-family:var(--font-mono);font-weight:600;font-size:15px;color:var(--text);
+  display:flex;align-items:center;gap:8px;
+}
+.brand-dot{color:var(--accent)}
+.nav-links{display:flex;align-items:center;gap:28px}
+.nav-link{
+  font-family:var(--font-mono);font-size:13px;color:var(--text-dim);
+  position:relative;padding:4px 0;transition:color .2s var(--ease);
+  white-space:nowrap;
+}
+.nav-link::before{content:'~/'}
+.nav-link::after{
+  content:'';position:absolute;left:0;bottom:-3px;width:0;height:1px;background:var(--accent);
+  transition:width .25s var(--ease);
+}
+.nav-link:hover,.nav-link.active{color:var(--text)}
+.nav-link:hover::after,.nav-link.active::after{width:100%}
+.nav-cta{
+  font-family:var(--font-mono);font-size:12.5px;font-weight:600;
+  color:var(--bg);background:var(--accent);
+  padding:9px 16px;border-radius:7px;
+  transition:transform .2s var(--ease),box-shadow .2s var(--ease);
+  white-space:nowrap;
+}
+.nav-cta:hover{transform:translateY(-1px);box-shadow:0 8px 20px -8px rgba(62,224,138,0.55)}
+.menu-toggle{display:none;padding:8px;color:var(--text)}
+.mobile-menu{
+  position:fixed;inset:0;z-index:150;
+  background:rgba(8,12,10,0.98);
+  backdrop-filter:blur(10px);
+  display:flex;flex-direction:column;
+  padding:24px;
+  transform:translateY(-8px);opacity:0;visibility:hidden;
+  transition:opacity .3s var(--ease),transform .3s var(--ease),visibility .3s;
+}
+.mobile-menu.open{opacity:1;transform:translateY(0);visibility:visible}
+.mobile-menu-top{display:flex;justify-content:space-between;align-items:center;height:var(--nav-h)}
+.mobile-menu-links{display:flex;flex-direction:column;gap:6px;margin-top:24px;flex:1;justify-content:center}
+.mobile-menu-links a{
+  font-family:var(--font-mono);font-size:26px;color:var(--text);
+  padding:14px 4px;border-bottom:1px solid var(--border);
+}
+.mobile-menu-links a span{color:var(--accent)}
+.mobile-menu-foot{display:flex;gap:18px;padding-top:16px}
+
+.btn{
+  display:inline-flex;align-items:center;gap:9px;
+  font-family:var(--font-mono);font-size:13.5px;font-weight:600;
+  padding:13px 22px;border-radius:9px;
+  transition:transform .2s var(--ease),box-shadow .2s var(--ease),border-color .2s var(--ease),background .2s var(--ease);
+}
+.btn-primary{background:var(--accent);color:#06130c}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 12px 28px -10px rgba(62,224,138,0.55)}
+.btn-ghost{border:1px solid var(--border-strong);color:var(--text)}
+.btn-ghost:hover{border-color:var(--accent);color:var(--accent-2);transform:translateY(-2px)}
+.btn svg{width:15px;height:15px}
+
+.hero{padding:calc(var(--nav-h) + 64px) 0 80px}
+.hero-grid{display:grid;grid-template-columns:1.35fr 1fr;gap:56px;align-items:start}
+.eyebrow{
+  font-family:var(--font-mono);font-size:13px;color:var(--accent);
+  display:inline-flex;align-items:center;gap:9px;margin-bottom:20px;
+}
+.eyebrow-dot{width:7px;height:7px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 4px var(--accent-soft);animation:pulse 2.4s ease-in-out infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+.hero-name{font-size:clamp(2.5rem,5.4vw,4.1rem);font-weight:700;letter-spacing:-0.02em;margin-bottom:10px}
+.hero-name em{
+  font-style:normal;color:var(--accent-2);
+  background:linear-gradient(180deg,transparent 62%,var(--accent-soft) 62%);
+  padding:0 2px;
+}
+.hero-role{
+  font-family:var(--font-mono);font-size:clamp(1.05rem,2vw,1.3rem);color:var(--text-dim);
+  margin-bottom:26px;display:flex;align-items:center;gap:10px;flex-wrap:wrap;
+}
+.hero-role .sep{color:var(--text-faint)}
+.hero-statement{
+  font-size:clamp(1.05rem,1.6vw,1.2rem);line-height:1.65;color:var(--text);
+  max-width:56ch;margin-bottom:20px;font-weight:500;
+}
+.hero-bio{color:var(--text-dim);max-width:58ch;margin-bottom:32px;font-size:15.5px}
+.hero-actions{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:34px}
+.hero-links{display:flex;gap:22px;flex-wrap:wrap}
+.hero-link{
+  display:flex;align-items:center;gap:8px;
+  font-family:var(--font-mono);font-size:13px;color:var(--text-dim);
+  transition:color .2s var(--ease);
+}
+.hero-link:hover{color:var(--accent-2)}
+.hero-link svg{width:17px;height:17px}
+
+.hero-side{display:flex;flex-direction:column;gap:20px}
+.photo-frame{
+  position:relative;aspect-ratio:4/5;border-radius:var(--radius);
+  background:var(--surface);border:1px solid var(--border);
+  overflow:hidden;
+}
+.photo-frame img{width:100%;height:100%;object-fit:cover}
+.photo-placeholder{
+  position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;
+  color:var(--text-faint);text-align:center;padding:20px;
+  background:
+    linear-gradient(135deg, rgba(62,224,138,0.05), transparent 60%),
+    repeating-linear-gradient(135deg, rgba(255,255,255,0.015) 0 2px, transparent 2px 14px);
+}
+.photo-placeholder svg{width:38px;height:38px;color:var(--text-faint)}
+.photo-placeholder strong{font-family:var(--font-mono);font-size:12.5px;color:var(--text-dim);letter-spacing:0.02em}
+.photo-placeholder span{font-size:11.5px;font-family:var(--font-mono)}
+.frame-corner{position:absolute;width:18px;height:18px;border-color:var(--accent);opacity:.7}
+.frame-corner.tl{top:10px;left:10px;border-top:2px solid;border-left:2px solid}
+.frame-corner.tr{top:10px;right:10px;border-top:2px solid;border-right:2px solid}
+.frame-corner.bl{bottom:10px;left:10px;border-bottom:2px solid;border-left:2px solid}
+.frame-corner.br{bottom:10px;right:10px;border-bottom:2px solid;border-right:2px solid}
+
+.terminal{
+  border:1px solid var(--border);border-radius:var(--radius);
+  background:var(--surface);overflow:hidden;
+}
+.terminal-bar{
+  display:flex;align-items:center;gap:8px;padding:11px 14px;
+  background:var(--surface-2);border-bottom:1px solid var(--border);
+}
+.tdot{width:9px;height:9px;border-radius:50%}
+.tdot.r{background:#e0665c}.tdot.y{background:#e0b95c}.tdot.g{background:#5cd48a}
+.terminal-title{
+  font-family:var(--font-mono);font-size:11.5px;color:var(--text-faint);
+  margin-left:6px;
+}
+.terminal-body{padding:18px 18px 20px;font-family:var(--font-mono);font-size:13px}
+.term-line{color:var(--text-dim);display:flex;gap:8px;flex-wrap:wrap;min-height:1.4em}
+.term-line .prompt{color:var(--accent)}
+.cursor{display:inline-block;width:7px;background:var(--accent-2);margin-left:2px;animation:blink 1s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+.term-output{margin-top:12px;opacity:0;transform:translateY(4px);transition:opacity .5s var(--ease),transform .5s var(--ease)}
+.term-output.show{opacity:1;transform:translateY(0)}
+.term-row{display:flex;gap:6px;padding:2px 0}
+.term-key{color:var(--accent)}
+.term-punc{color:var(--text-faint)}
+.term-str{color:#a9c9e8}
+.term-num{color:var(--amber)}
+.term-brace{color:var(--text-faint)}
+
+.skills{padding:20px 0 90px}
+.skills-head{display:flex;align-items:baseline;gap:12px;margin-bottom:34px;flex-wrap:wrap}
+.skills-head .path{font-family:var(--font-mono);color:var(--accent);font-size:14px}
+.skills-head h2{font-size:1.5rem}
+.skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:22px}
+.skill-group{
+  border:1px solid var(--border);border-radius:var(--radius-sm);
+  background:var(--surface);padding:18px 18px 16px;
+}
+.skill-group-path{font-family:var(--font-mono);font-size:12px;color:var(--text-faint);margin-bottom:12px}
+.tag-pills{display:flex;flex-wrap:wrap;gap:8px}
+.tag-pill{
+  font-family:var(--font-mono);font-size:12px;color:var(--text-dim);
+  border:1px solid var(--border-strong);border-radius:6px;padding:5px 10px;
+  transition:border-color .2s var(--ease),color .2s var(--ease);
+}
+.tag-pill:hover{border-color:var(--accent);color:var(--accent-2)}
+
+.org-section{padding:64px 0;scroll-margin-top:calc(var(--nav-h) + 16px);border-top:1px solid var(--border)}
+.org-header{margin-bottom:38px}
+.org-path{font-family:var(--font-mono);color:var(--accent);font-size:14px;display:block;margin-bottom:8px}
+.org-title{font-size:clamp(1.7rem,3.4vw,2.35rem);margin-bottom:10px}
+.org-desc{color:var(--text-dim);max-width:62ch;font-size:15px}
+.project-list{display:flex;flex-direction:column;gap:26px}
+
+.project-card{
+  border:1px solid var(--border);border-radius:var(--radius);
+  background:var(--surface);overflow:hidden;
+  transition:border-color .3s var(--ease),transform .3s var(--ease),box-shadow .3s var(--ease);
+}
+.project-card:hover{border-color:var(--border-strong);box-shadow:0 24px 48px -30px rgba(0,0,0,0.6)}
+
+.media-primary{
+  position:relative;aspect-ratio:16/9;background:var(--bg-soft);
+  border-bottom:1px solid var(--border);overflow:hidden;
+}
+.media-primary img,.media-primary video{width:100%;height:100%;object-fit:cover}
+.media-placeholder{
+  position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;
+  color:var(--text-faint);text-align:center;padding:16px;
+  background:repeating-linear-gradient(135deg, rgba(255,255,255,0.014) 0 2px, transparent 2px 16px);
+}
+.media-placeholder svg{width:26px;height:26px}
+.media-placeholder .mtype{font-family:var(--font-mono);font-size:10.5px;letter-spacing:0.08em;text-transform:uppercase;color:var(--text-faint)}
+.media-placeholder .mcap{font-size:13px;color:var(--text-dim);max-width:34ch}
+.media-extra{display:grid;grid-template-columns:repeat(auto-fit,minmax(110px,1fr));gap:1px;background:var(--border)}
+.media-tile{position:relative;aspect-ratio:1/1;background:var(--bg-soft);overflow:hidden}
+.media-tile img,.media-tile video{width:100%;height:100%;object-fit:cover}
+.media-tile .media-placeholder{padding:8px;gap:6px}
+.media-tile .media-placeholder svg{width:18px;height:18px}
+.media-tile .mcap{font-size:10.5px;max-width:none}
+
+.project-body{padding:26px 26px 28px}
+.project-top{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;flex-wrap:wrap;margin-bottom:6px}
+.project-title{font-size:1.3rem}
+.project-pills{display:flex;gap:8px;flex-wrap:wrap}
+.pill{
+  font-family:var(--font-mono);font-size:11px;letter-spacing:0.02em;
+  padding:4px 10px;border-radius:20px;white-space:nowrap;
+}
+.pill-status{background:var(--accent-soft);color:var(--accent-2);border:1px solid var(--accent-soft-border)}
+.pill-year{background:transparent;color:var(--text-faint);border:1px solid var(--border-strong)}
+.project-role{font-family:var(--font-mono);font-size:12.5px;color:var(--text-faint);margin-bottom:14px}
+.project-summary{color:var(--text-dim);margin-bottom:18px;font-size:15px}
+.highlights{display:flex;flex-direction:column;gap:9px;margin-bottom:18px}
+.highlight-item{display:flex;gap:10px;font-size:14.5px;color:var(--text)}
+.highlight-item::before{content:'›';color:var(--accent);font-family:var(--font-mono);font-weight:700;line-height:1.5}
+.badges-row{display:flex;flex-direction:column;gap:8px;margin-bottom:18px}
+.badge{
+  display:flex;gap:10px;align-items:flex-start;
+  background:var(--amber-soft);border:1px solid #4a3618;
+  border-radius:8px;padding:10px 12px;font-size:13px;color:#f2d3a0;
+}
+.badge svg{width:15px;height:15px;flex-shrink:0;margin-top:2px;color:var(--amber)}
+
+.tech-toggle{
+  display:flex;align-items:center;gap:9px;width:100%;
+  font-family:var(--font-mono);font-size:12.5px;color:var(--text-dim);
+  padding-top:16px;border-top:1px solid var(--border);
+  transition:color .2s var(--ease);
+}
+.tech-toggle:hover{color:var(--accent-2)}
+.tech-toggle svg{width:13px;height:13px;transition:transform .3s var(--ease)}
+.project-card.open .tech-toggle svg{transform:rotate(180deg)}
+.project-card.open .tech-toggle{color:var(--accent-2)}
+.tech-panel{display:grid;grid-template-rows:0fr;transition:grid-template-rows .38s var(--ease)}
+.project-card.open .tech-panel{grid-template-rows:1fr}
+.tech-panel-inner{overflow:hidden}
+.tech-rows{padding-top:16px;display:flex;flex-direction:column;gap:11px}
+.tech-row{display:flex;gap:14px;font-size:13px;line-height:1.55}
+.tech-key{
+  font-family:var(--font-mono);color:var(--accent);flex:0 0 auto;min-width:150px;
+  font-size:12.5px;padding-top:1px;
+}
+.tech-value{color:var(--text-dim)}
+
+.activities{padding:64px 0;scroll-margin-top:calc(var(--nav-h) + 16px);border-top:1px solid var(--border)}
+.activity-list{display:flex;flex-direction:column;gap:16px;margin-top:34px}
+.activity-card{
+  border:1px solid var(--border);border-radius:var(--radius-sm);
+  background:var(--surface);padding:20px 22px;
+  display:flex;gap:18px;align-items:flex-start;
+}
+.activity-icon{
+  width:38px;height:38px;border-radius:9px;flex-shrink:0;
+  background:var(--accent-soft);border:1px solid var(--accent-soft-border);
+  display:flex;align-items:center;justify-content:center;color:var(--accent-2);
+}
+.activity-icon svg{width:18px;height:18px}
+.activity-top{display:flex;gap:12px;align-items:baseline;flex-wrap:wrap;margin-bottom:6px}
+.activity-title{font-family:var(--font-display);font-weight:600;font-size:1.02rem}
+.activity-year{font-family:var(--font-mono);font-size:11.5px;color:var(--text-faint)}
+.activity-desc{color:var(--text-dim);font-size:14px}
+
+.cta-band{
+  padding:80px 0;text-align:center;border-top:1px solid var(--border);
+}
+.cta-band .path{font-family:var(--font-mono);color:var(--accent);font-size:13px;display:block;margin-bottom:14px}
+.cta-band h2{font-size:clamp(1.7rem,3.6vw,2.6rem);margin-bottom:16px}
+.cta-band p{color:var(--text-dim);max-width:52ch;margin:0 auto 30px}
+.cta-band .hero-actions{justify-content:center}
+
+.site-footer{border-top:1px solid var(--border);padding:40px 0 32px}
+.footer-inner{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:18px}
+.footer-brand{font-family:var(--font-mono);font-size:13px;color:var(--text-faint)}
+.footer-links{display:flex;gap:20px}
+.footer-links a{color:var(--text-dim);transition:color .2s var(--ease)}
+.footer-links a:hover{color:var(--accent-2)}
+.footer-links svg{width:18px;height:18px}
+
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .6s var(--ease),transform .6s var(--ease)}
+.reveal.visible{opacity:1;transform:translateY(0)}
+
+@media (max-width:900px){
+  .hero-grid{grid-template-columns:1fr;gap:40px}
+  .hero-side{max-width:340px}
+  .nav-links{display:none}
+  .menu-toggle{display:flex}
+}
+@media (max-width:640px){
+  .container{padding:0 20px}
+  .hero{padding-top:calc(var(--nav-h) + 40px)}
+  .project-body{padding:20px}
+  .org-section,.activities{padding:48px 0}
+  .tech-key{min-width:120px}
+  .footer-inner{flex-direction:column;align-items:flex-start}
+}
+@media (prefers-reduced-motion:reduce){
+  *{animation-duration:0.001ms !important;animation-iteration-count:1 !important;transition-duration:0.001ms !important;scroll-behavior:auto !important}
+}
+</style>
+</head>
+<body>
+<a href="#main" class="skip-link">Skip to content</a>
+
+<nav class="site-nav">
+  <div class="container nav-inner">
+    <a href="#top" class="brand"><span class="brand-dot">&gt;</span>_ Your Name</a>
+    <div class="nav-links" id="navLinks"></div>
+    <div style="display:flex;align-items:center;gap:14px">
+      <a href="resume.pdf" download class="nav-cta" style="display:none" id="navResume">Résumé</a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="22" height="22"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <div class="mobile-menu-top">
+    <span class="brand">&gt;_ Salman Sheikh</span>
+    <button id="menuClose" aria-label="Close menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="24" height="24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+  </div>
+  <div class="mobile-menu-links" id="mobileMenuLinks"></div>
+  <div class="mobile-menu-foot" id="mobileMenuFoot"></div>
+</div>
+
+<main id="main">
+<section class="hero" id="top">
+  <div class="container hero-grid">
+    <div class="hero-content">
+      <p class="eyebrow"><span class="eyebrow-dot"></span>Open to AI Engineering roles</p>
+      <h1 class="hero-name">Your <em>Name</em></h1>
+      <p class="hero-role">AI Engineer <span class="sep">·</span> Bahrain <span class="sep">·</span> 23</p>
+      <p class="hero-statement">AI Engineer with experience spanning LLMs, RAG, NLP, computer vision, embedded AI, robotics, generative AI, document automation, cloud infrastructure, and AI agents.</p>
+      <p class="hero-bio">I'm a 23-year-old AI engineer who likes building things that actually ship — from a Bahraini-dialect LLM with a code sandbox, to a sign-language glove that runs entirely offline on a microcontroller. I've led small engineering teams, deployed production systems for government and institutional clients, and picked up a few national awards along the way. Below is a full breakdown of that work, organized by where it was built.</p>
+      <div class="hero-actions">
+        <a href="#axis" class="btn btn-primary">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          View projects
+        </a>
+        <a href="resume.pdf" download class="btn btn-ghost">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14"/></svg>
+          Download résumé
+        </a>
+      </div>
+      <div class="hero-links">
+        <a class="hero-link" href="mailto:s4lmsheikh@gmail.com">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+          s4lmsheikh@gmail.com
+        </a>
+        <a class="hero-link" href="https://github.com/s4lm-xi" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.58 2 12.25c0 4.53 2.87 8.37 6.84 9.73.5.1.68-.22.68-.49 0-.24-.01-1.04-.01-1.89-2.78.62-3.37-1.21-3.37-1.21-.45-1.18-1.11-1.5-1.11-1.5-.9-.64.07-.63.07-.63 1 .07 1.53 1.05 1.53 1.05.89 1.56 2.34 1.11 2.91.85.09-.66.35-1.11.63-1.36-2.22-.26-4.56-1.14-4.56-5.06 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.31.1-2.72 0 0 .84-.28 2.75 1.05a9.3 9.3 0 0 1 2.5-.35c.85 0 1.71.12 2.5.35 1.91-1.33 2.75-1.05 2.75-1.05.55 1.41.2 2.46.1 2.72.64.72 1.03 1.63 1.03 2.75 0 3.93-2.34 4.79-4.57 5.05.36.32.68.94.68 1.9 0 1.37-.01 2.47-.01 2.81 0 .27.18.6.69.49A10.26 10.26 0 0 0 22 12.25C22 6.58 17.52 2 12 2z"/></svg>
+          github.com/s4lm-xi
+        </a>
+        <a class="hero-link" href="https://www.linkedin.com/in/salman-sheikh-31x/" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5C4.98 4.88 3.86 6 2.48 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.5 8.25h4V23h-4V8.25zM8.25 8.25h3.83v2.01h.05c.53-1 1.84-2.06 3.79-2.06 4.06 0 4.81 2.67 4.81 6.14V23h-4v-6.7c0-1.6-.03-3.66-2.23-3.66-2.23 0-2.57 1.74-2.57 3.54V23h-4V8.25z"/></svg>
+          linkedin.com/in/salman-sheikh-31x/
+        </a>
+      </div>
+    </div>
+
+    <div class="hero-side">
+      <div class="photo-frame">
+        <div class="photo-placeholder">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-8 8-8s8 3.6 8 8"/></svg>
+          <strong>Profile photo</strong>
+          <span>drop an &lt;img&gt; in .photo-frame</span>
+        </div>
+        <div class="frame-corner tl"></div><div class="frame-corner tr"></div>
+        <div class="frame-corner bl"></div><div class="frame-corner br"></div>
+      </div>
+      <div class="terminal">
+        <div class="terminal-bar">
+          <span class="tdot r"></span><span class="tdot y"></span><span class="tdot g"></span>
+          <span class="terminal-title">guest@portfolio — zsh</span>
+        </div>
+        <div class="terminal-body">
+          <p class="term-line"><span class="prompt">$</span> <span id="typedCmd"></span><span class="cursor" id="typeCursor"></span></p>
+          <div class="term-output" id="termOutput">
+            <div class="term-row"><span class="term-brace">{</span></div>
+            <div class="term-row" style="padding-left:14px"><span class="term-key">"role"</span><span class="term-punc">:</span> <span class="term-str">"AI Engineer"</span><span class="term-punc">,</span></div>
+            <div class="term-row" style="padding-left:14px"><span class="term-key">"age"</span><span class="term-punc">:</span> <span class="term-num">23</span><span class="term-punc">,</span></div>
+            <div class="term-row" style="padding-left:14px"><span class="term-key">"location"</span><span class="term-punc">:</span> <span class="term-str">"Bahrain"</span><span class="term-punc">,</span></div>
+            <div class="term-row" style="padding-left:14px"><span class="term-key">"focus"</span><span class="term-punc">:</span> <span class="term-str">"LLMs · RAG · CV · Embedded · Cloud"</span><span class="term-punc">,</span></div>
+            <div class="term-row" style="padding-left:14px"><span class="term-key">"status"</span><span class="term-punc">:</span> <span class="term-str">"open to opportunities"</span></div>
+            <div class="term-row"><span class="term-brace">}</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="skills reveal">
+  <div class="container">
+    <div class="skills-head">
+      <span class="path">$ ls skills/</span>
+      <h2>Core expertise</h2>
+    </div>
+    <div class="skills-grid" id="skillsGrid"></div>
+  </div>
+</section>
+
+<div id="orgSections"></div>
+
+<section class="activities reveal" id="activities">
+  <div class="container">
+    <span class="org-path">~/competitions-and-mentorship/</span>
+    <h2 class="org-title">Competitions, mentorship &amp; industry activity</h2>
+    <p class="org-desc">Judging, mentoring, and representing teams outside of day-to-day engineering work.</p>
+    <div class="activity-list" id="activityList"></div>
+  </div>
+</section>
+
+<section class="cta-band reveal">
+  <div class="container">
+    <span class="path">$ echo $NEXT_STEP</span>
+    <h2>Let's build something worth shipping.</h2>
+    <p>I'm currently looking for AI engineering roles where I can work on LLMs, agents, and production ML systems end to end. Reach out — I reply fast.</p>
+    <div class="hero-actions">
+      <a href="mailto:hello@yourname.dev" class="btn btn-primary">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+        Email me
+      </a>
+      <a href="resume.pdf" download class="btn btn-ghost">Download résumé</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <span class="footer-brand">© <span id="year"></span> Your Name — built from scratch, deployed on GitHub Pages.</span>
+    <div class="footer-links">
+      <a href="mailto:hello@yourname.dev" aria-label="Email">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+      </a>
+      <a href="https://github.com/yourusername" target="_blank" rel="noopener" aria-label="GitHub">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.58 2 12.25c0 4.53 2.87 8.37 6.84 9.73.5.1.68-.22.68-.49 0-.24-.01-1.04-.01-1.89-2.78.62-3.37-1.21-3.37-1.21-.45-1.18-1.11-1.5-1.11-1.5-.9-.64.07-.63.07-.63 1 .07 1.53 1.05 1.53 1.05.89 1.56 2.34 1.11 2.91.85.09-.66.35-1.11.63-1.36-2.22-.26-4.56-1.14-4.56-5.06 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.31.1-2.72 0 0 .84-.28 2.75 1.05a9.3 9.3 0 0 1 2.5-.35c.85 0 1.71.12 2.5.35 1.91-1.33 2.75-1.05 2.75-1.05.55 1.41.2 2.46.1 2.72.64.72 1.03 1.63 1.03 2.75 0 3.93-2.34 4.79-4.57 5.05.36.32.68.94.68 1.9 0 1.37-.01 2.47-.01 2.81 0 .27.18.6.69.49A10.26 10.26 0 0 0 22 12.25C22 6.58 17.52 2 12 2z"/></svg>
+      </a>
+      <a href="https://linkedin.com/in/yourname" target="_blank" rel="noopener" aria-label="LinkedIn">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5C4.98 4.88 3.86 6 2.48 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.5 8.25h4V23h-4V8.25zM8.25 8.25h3.83v2.01h.05c.53-1 1.84-2.06 3.79-2.06 4.06 0 4.81 2.67 4.81 6.14V23h-4v-6.7c0-1.6-.03-3.66-2.23-3.66-2.23 0-2.57 1.74-2.57 3.54V23h-4V8.25z"/></svg>
+      </a>
+    </div>
+  </div>
+</footer>
+
+<script>
+const icons = {
+  image: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>',
+  video: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="2.5" y="5.5" width="14" height="13" rx="2"/><path d="M21.5 8.5l-5 3.5 5 3.5v-7z"/></svg>',
+  trophy: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M8 21h8M12 17v4M7 4h10v4a5 5 0 0 1-10 0V4z"/><path d="M7 5H4a3 3 0 0 0 3 4M17 5h3a3 3 0 0 1-3 4"/></svg>',
+  chevron: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M6 9l6 6 6-6"/></svg>',
+  award: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="8" r="6"/><path d="M8.5 13.5L7 22l5-3 5 3-1.5-8.5"/></svg>',
+  mentor: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 14l9-5-9-5-9 5 9 5z"/><path d="M3 9v6c0 1.5 4 3 9 3s9-1.5 9-3V9"/></svg>',
+  globe: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18 14 14 0 0 1 0-18z"/></svg>'
+};
+
+const skillGroups = [
+  {path:'~/skills/llms-agents/', tags:['LLM Fine-tuning','RAG Systems','Agentic Workflows & Tool Use','LangChain','AWS Bedrock','Prompt & Context Engineering']},
+  {path:'~/skills/computer-vision/', tags:['YOLO','OpenCV','MediaPipe','Object Detection & Tracking','Face Recognition']},
+  {path:'~/skills/embedded-robotics/', tags:['ESP32','Raspberry Pi','Arduino','Sensor Fusion (LiDAR, IMU)','C / C++']},
+  {path:'~/skills/cloud-mlops/', tags:['AWS (SageMaker, EC2, Transcribe)','Docker','Kubernetes','Jenkins CI/CD','RunPod']},
+  {path:'~/skills/data-nlp/', tags:['PyTorch','Hugging Face Transformers','FAISS · Pinecone · Elasticsearch','Whisper','NLP']}
+];
+
+const orgs = [
+  {
+    slug:'axis', path:'~/axis/', name:'AXIS',
+    desc:'Independent AI lab — large language models, agentic systems, and embedded intelligence.',
+    projects:[
+      {
+        title:'Mashmoom — Bahraini Arabic LLM', year:'2026', status:'In active development',
+        role:'Team Lead — 6-person team, 3 developers reporting directly; led IT & infrastructure',
+        summary:'An independent large language model built specifically for the Bahraini Arabic dialect, trained on proprietary conversational data — since evolved into a full agentic system with tool use and a custom code sandbox.',
+        highlights:[
+          'Handles Bahraini dialect conversation, reasoning, deep analysis, coding, translation, document generation, Excel analysis, and graph generation',
+          'Trained on AWS using 2× A100 GPUs',
+          'Deployed on RunPod via Docker + Kubernetes orchestration',
+          'Evolved into an agentic system with a custom Docker-based code sandbox and tool-use capabilities'
+        ],
+        media:[{type:'image',caption:'Architecture diagram'},{type:'image',caption:'Conversation screenshots'},{type:'video',caption:'Demo — handling a task'}],
+        tech:[
+          {k:'Model approach',v:'Custom clustering/classification architecture purpose-built for dialect handling — not a fine-tune of an off-the-shelf LLM'},
+          {k:'Training frameworks',v:'PyTorch, Hugging Face Transformers'},
+          {k:'Dataset',v:'Custom-scraped, proprietary Bahraini conversational dataset'},
+          {k:'Training infra',v:'AWS, 2× A100 GPUs'},
+          {k:'Deployment',v:'RunPod, Docker, Kubernetes'},
+          {k:'API layer',v:'FastAPI / Flask REST API'},
+          {k:'Agentic sandbox',v:'Custom Docker-based code sandbox for tool use'},
+          {k:'CI/CD',v:'Jenkins pipelines'},
+          {k:'Monitoring',v:'AWS CloudWatch dashboards'}
+        ]
+      },
+      {
+        title:'AXIS Smart Sign Language Glove', year:'2023–2026', status:'Award-winning',
+        role:'Started as a university project, evolved into an AXIS project',
+        summary:'A fully offline, battery-powered smart glove that translates Arabic and Bahraini sign language gestures into spoken sentences in real time.',
+        highlights:[
+          'Fully offline, battery-powered — built on flex sensors, a gyroscope, and an accelerometer',
+          'Translates Arabic/Bahraini sign language gestures into spoken sentences',
+          'Runs entirely on an ESP32 with ~5ms inference latency'
+        ],
+        badges:[
+          '1st place, Bahrain IoT & AI Competition (2023); represented Bahrain at GCC level',
+          'Innovative Venture Award + Technology Excellence Award, INJAZ Bahrain (2026); nominated for Company of the Year',
+          'Featured in a live Bahrain TV interview (2026)'
+        ],
+        media:[{type:'image',caption:'Glove hardware photos'},{type:'video',caption:'Gesture-to-speech demo'},{type:'video',caption:'Bahrain TV interview clip'},{type:'image',caption:'Competition & award photos'}],
+        tech:[
+          {k:'Sensors',v:'Flex sensors, gyroscope, accelerometer'},
+          {k:'Gesture model',v:'Custom lightweight neural network built for on-device constraints'},
+          {k:'On-device inference',v:'Custom C/C++ inference running directly on ESP32 — fully offline'},
+          {k:'Latency',v:'~5ms per gesture'},
+          {k:'Speech output',v:'Onboard speaker + audio module, fully self-contained'},
+          {k:'Power',v:'Battery-powered, standalone wearable'}
+        ]
+      }
+    ]
+  },
+  {
+    slug:'adri', path:'~/adri/', name:'Arabic Digital Research Institute',
+    desc:"Led a small team across ADRI's AI initiatives — live, production systems for institutional and government clients, including the Saudi Ministry of Culture and Tamkeen, built on AWS (SageMaker, EC2, Transcribe), MongoDB, document pipelines, RAG, NLP, and computer vision.",
+    projects:[
+      {
+        title:'AI Document Translation & Automation',
+        summary:'22+ specialized AI translation models automating the translation of foreign tender documents and proposals into Arabic — preserving original tables and formatting — used on Saudi Ministry of Culture projects.',
+        highlights:[
+          '22+ specialized AI translation models',
+          'Preserved original tables, formatting, and structure during translation',
+          'Automated pipeline: AI translation → human QA → final client delivery',
+          'Built a surrounding ERP/workflow-style platform for translation teams'
+        ],
+        media:[{type:'image',caption:'Before/after translated document samples'},{type:'image',caption:'Workflow platform screenshots'}],
+        tech:[
+          {k:'Format preservation',v:'OCR + layout detection (LayoutLM-style) to identify and preserve tables/structure'},
+          {k:'Translation engine',v:'Custom fine-tuned machine translation model'},
+          {k:'Pipeline',v:'AI translation → human QA → delivery'},
+          {k:'Surrounding system',v:'Custom-built ERP/workflow platform for translation team operations'},
+          {k:'Scale',v:'22+ models across document types/languages'}
+        ]
+      },
+      {
+        title:'Large-Scale RAG Scholarly Chatbot', year:'2021–2022',
+        summary:"One of the world's earliest RAG (Retrieval-Augmented Generation) chatbots — built over a 1TB corpus of academic PDFs and text, letting users chat directly with scholarly papers and research resources.",
+        highlights:[
+          'Among the earliest RAG chatbot implementations, predating widespread RAG adoption',
+          'Over 1TB of PDF/text data indexed',
+          'Integrated into a platform for chatting with scholarly papers and research resources',
+          'Responses grounded in the underlying academic documents'
+        ],
+        media:[{type:'image',caption:'Chatbot UI screenshots'}],
+        tech:[
+          {k:'Retrieval backend',v:'FAISS, Pinecone, and Elasticsearch combined for retrieval at scale'},
+          {k:'Corpus size',v:'1TB+ of PDF/text academic data'},
+          {k:'Architecture',v:'Retrieval-Augmented Generation — retrieval layer feeding grounded generation'},
+          {k:'Era',v:"Built 2021–2022, early in RAG's public adoption"}
+        ]
+      },
+      {
+        title:'Arabic Plagiarism Checker',
+        summary:'An Arabic-focused plagiarism detection system supporting 22+ languages, capable of detecting both traditionally copied and AI-generated text.',
+        highlights:[
+          'Arabic-focused, with support for 22+ languages',
+          'Detects plagiarism in both human-written and AI-generated text',
+          'Produces plagiarism scores for uploaded assignments'
+        ],
+        media:[{type:'image',caption:'Plagiarism report / score screenshot'}],
+        tech:[
+          {k:'Detection method',v:'Embedding similarity search comparing documents via vector embeddings, not just exact-string matches'},
+          {k:'Language coverage',v:'22+ languages'},
+          {k:'Output',v:'Numerical plagiarism score per submission'}
+        ]
+      },
+      {
+        title:'Multilingual AI Video Transcription',
+        summary:'An automated video transcription system supporting Arabic, English, Spanish, and more — built into an MVP for a Saudi ministry.',
+        highlights:[
+          'Multilingual: Arabic, English, Spanish, and more',
+          'MVP allowing users to upload videos and receive processed transcriptions',
+          'Delivered for a Saudi ministry',
+          'Full AWS-based infrastructure (SageMaker, EC2, databases)'
+        ],
+        media:[{type:'image',caption:'Transcription MVP UI screenshots'}],
+        tech:[
+          {k:'ASR engines',v:'AWS Transcribe combined with Whisper for improved multilingual accuracy'},
+          {k:'Infrastructure',v:'AWS SageMaker, EC2, cloud databases'},
+          {k:'Delivery',v:'MVP built for a Saudi ministry client'}
+        ]
+      }
+    ]
+  },
+  {
+    slug:'fablab', path:'~/fablab-bahrain/', name:'FabLab Bahrain',
+    desc:"Applied AI prototypes built at Bahrain's national FabLab — spanning automated outreach systems and autonomous robotics.",
+    projects:[
+      {
+        title:'AI WhatsApp Alumni Feedback System', status:'Completed prototype',
+        summary:"An AI chatbot that automatically messaged 200+ graduates via WhatsApp, collected structured feedback about their programs, and compiled results for Tamkeen's evaluation of sponsored programs.",
+        highlights:[
+          'Automated outreach to 200+ graduates via WhatsApp',
+          'Asked structured questions and collected feedback automatically',
+          'Generated summaries and structured results',
+          'Delivered to Tamkeen for program evaluation'
+        ],
+        media:[{type:'image',caption:'Sample chatbot conversation'},{type:'image',caption:'Feedback summary report'}],
+        tech:[
+          {k:'Messaging integration',v:'Twilio WhatsApp API'},
+          {k:'AI / NLP',v:'OpenAI integration for conversation handling and summarization'},
+          {k:'Infrastructure',v:'AWS EC2 + databases'},
+          {k:'Scale',v:'200+ graduates reached'}
+        ]
+      },
+      {
+        title:'Smart Autonomous Supermarket Trolley', status:'Completed prototype',
+        role:'Sole AI engineer, alongside two mechanical engineers',
+        summary:'An autonomous shopping trolley that identifies and follows a specific shopper through a store.',
+        highlights:[
+          'Combines computer vision, object detection, face recognition, object tracking, and LiDAR',
+          "Identifies and tracks a specific person, sending real-time movement commands to the trolley's motors",
+          'Microcontroller programming to convert AI decisions into physical movement'
+        ],
+        media:[{type:'image',caption:'Trolley hardware photos'},{type:'video',caption:'Trolley following a person'}],
+        tech:[
+          {k:'Computer vision stack',v:'YOLO + OpenCV + MediaPipe for detection, face recognition, and tracking'},
+          {k:'Sensors',v:'LiDAR plus additional sensors for spatial awareness'},
+          {k:'Motor control',v:"Arduino / C++ translating tracking decisions into motor commands"},
+          {k:'Team',v:'Sole AI engineer, alongside two mechanical engineers'}
+        ]
+      }
+    ]
+  },
+  {
+    slug:'freelance', path:'~/freelance/', name:'Freelance Projects',
+    desc:'Independent computer-vision and embedded-AI systems delivered directly to clients.',
+    projects:[
+      {
+        title:'AI Billiards / Pool Foul Detection System', role:'Client: Bahrain Billiards, Manama',
+        summary:'A computer-vision system using overhead cameras to detect balls, players, cue sticks, and fouls on a pool table in real time — maintaining scores and triggering alarms on illegal plays.',
+        highlights:[
+          'Detects balls, players, cue sticks, player actions, and fouls in real time',
+          'Maintains live scores and triggers an alarm on foul detection',
+          'Live detection running on a local, on-premise server',
+          'Delivered as an MVP / proof of concept to Bahrain Billiards (Manama)'
+        ],
+        media:[{type:'image',caption:'Overhead detection demo'}],
+        tech:[
+          {k:'Detection model',v:'YOLO for real-time ball/cue/player/foul detection'},
+          {k:'Deployment',v:'Live detection on a local, low-latency server'},
+          {k:'Client',v:'Bahrain Billiards, Manama'}
+        ]
+      },
+      {
+        title:'AI Maritime / Ship Detection System', role:'Client: group of graduating marine studies students',
+        summary:'An embedded AI system that detects, classifies, and identifies ships from distant camera footage, fully embedded on a Raspberry Pi.',
+        highlights:[
+          'Detects, recognizes, and classifies ships from distant footage',
+          'Size/type classification and reading of ship labels',
+          'Fully embedded on a Raspberry Pi'
+        ],
+        media:[{type:'image',caption:'Ship detection footage'}],
+        tech:[
+          {k:'Detection model',v:'YOLO, optimized/quantized for Raspberry Pi hardware constraints'},
+          {k:'Capabilities',v:'Type/size classification plus label reading from ship imagery'},
+          {k:'Client context',v:'Built for a group of students graduating from marine studies'}
+        ]
+      },
+      {
+        title:'CCTV AI Search Chatbot',
+        summary:'An AI chatbot letting security administrators search historical CCTV footage using natural-language descriptions, returning matching frames with timestamps.',
+        highlights:[
+          'Natural-language search over historical CCTV footage',
+          'Returns matching frames with date/timestamp',
+          'Designed for security and surveillance use cases'
+        ],
+        media:[{type:'image',caption:'Search interface demo'}],
+        tech:[
+          {k:'Stack',v:'OpenAI + LangChain for query understanding, combined with computer vision for attribute matching'},
+          {k:'Matching approach',v:'Detection plus embedding-based matching to translate text into visual search criteria'},
+          {k:'Output',v:'Matching frames with date and timestamp metadata'}
+        ]
+      }
+    ]
+  },
+  {
+    slug:'archetype', path:'~/archetype-foundry/', name:'Archetype Foundry',
+    desc:'Internship project — a fully local, voice-enabled LLM device.',
+    projects:[
+      {
+        title:'Noodles — Raspberry Pi LLM',
+        summary:'A compact, voice-enabled LLM device built during an internship — running a quantized language model fully locally on a Raspberry Pi 4, with text-to-speech and short-term memory.',
+        highlights:[
+          'Voice-enabled local LLM device, no cloud dependency',
+          'Runs on a Raspberry Pi 4 (4GB RAM, 16GB storage)',
+          'Text-to-speech for spoken responses',
+          "Short-term conversational memory"
+        ],
+        media:[],
+        tech:[
+          {k:'Base model',v:'Gemma, quantized for on-device use'},
+          {k:'Local inference',v:'Ollama'},
+          {k:'Hardware',v:'Raspberry Pi 4, 4GB RAM, 16GB storage'},
+          {k:'Extras',v:'Text-to-speech integration, short-term memory buffer'}
+        ]
+      }
+    ]
+  },
+  {
+    slug:'personal', path:'~/personal/', name:'Personal Projects',
+    desc:'Independent builds exploring agents, generative AI, and assistive technology.',
+    projects:[
+      {
+        title:'OpenClaw AI Business Assistant',
+        summary:'An agentic AI assistant connected to Gmail, Calendar, WhatsApp, and web search — built as a small-startup business assistant.',
+        highlights:[
+          'Agentic assistant hosted via AWS Bedrock',
+          'Connected to Gmail, Google Calendar, WhatsApp, and web search',
+          'Handles WhatsApp customer support replies, reads emails, adds calendar events, sets reminders, and searches the web'
+        ],
+        media:[{type:'image',caption:'OpenClaw assistant demo'}],
+        tech:[
+          {k:'Model',v:'Llama 3, hosted via AWS Bedrock'},
+          {k:'Agent framework',v:'OpenClaw'},
+          {k:'Integrations',v:'Native connectors for Gmail, Google Calendar, and WhatsApp'},
+          {k:'Capabilities',v:'Email reading, calendar events, reminders, web search/crawling, WhatsApp support'}
+        ]
+      },
+      {
+        title:'Lea — AI Music Generation', year:'2022',
+        summary:'An early generative AI project using a GAN trained on the musical patterns of Johann Sebastian Bach, generating new compositions in his style.',
+        highlights:[
+          'GAN-based music generation',
+          "Trained specifically on J.S. Bach's musical patterns",
+          'Generates new compositions inspired by learned patterns'
+        ],
+        media:[{type:'image',caption:'Generated composition demo'}],
+        tech:[
+          {k:'Architecture',v:'Generative Adversarial Network (GAN)'},
+          {k:'Training data',v:'J.S. Bach compositions / musical patterns'},
+          {k:'Output format',v:'MIDI'},
+          {k:'Year',v:'2022'}
+        ]
+      },
+      {
+        title:'Smart Cane — AI Assistive Technology', year:'2022',
+        summary:'A smart cane that helps visually impaired users navigate their surroundings, combining camera-based AI object detection with ultrasonic sensing.',
+        highlights:[
+          'Detects nearby objects and communicates direction via Bluetooth headphones',
+          'Built with a Raspberry Pi 3, webcam, ultrasonic sensor, and Bluetooth audio output'
+        ],
+        badges:['2nd place at the competition where it was presented'],
+        media:[{type:'image',caption:'Smart Cane demo'}],
+        tech:[
+          {k:'Detection approach',v:'Camera-based AI object detection/tracking combined with ultrasonic distance sensing'},
+          {k:'Hardware',v:'Raspberry Pi 3, webcam, ultrasonic sensor, Bluetooth headphones'},
+          {k:'Year',v:'2022'}
+        ]
+      }
+    ]
+  }
+];
+
+const activities = [
+  {icon:'globe', title:'Google Foo Bar', year:'2022', desc:"Invited by Google to its invitation-only developer challenge program, solving technical and programming challenges as part of it."},
+  {icon:'mentor', title:'BIBF × IGA AI Competition — Mentor & Judge', year:'2024', desc:'Invited as mentor, competition supervisor, and judge. Helped design the AI challenges and guided participants through data analysis, EDA, machine learning, model training, and prediction, submitted via Kaggle.'},
+  {icon:'award', title:'GITEX Dubai', year:'2021', desc:'Represented ADRI as a Bahraini representative at GITEX Dubai, presenting company technologies to potential clients and taking part in business discussions that helped secure potential meetings and contracts.'}
+];
+
+function mediaSlot(item, small){
+  const capClass = small ? 'mcap' : 'mcap';
+  return `<div class="media-placeholder">${icons[item.type]}<span class="mtype">${item.type}</span><span class="${capClass}">${item.caption}</span></div>`;
+}
+
+function renderMedia(mediaArr){
+  if(!mediaArr || mediaArr.length === 0){
+    return `<div class="media-primary" style="aspect-ratio:21/9">${mediaSlot({type:'image',caption:'Media coming soon'})}</div>`;
+  }
+  const primary = mediaArr[0];
+  const rest = mediaArr.slice(1);
+  let html = `<div class="media-primary">${mediaSlot(primary)}</div>`;
+  if(rest.length){
+    html += `<div class="media-extra">${rest.map(m => `<div class="media-tile">${mediaSlot(m, true)}</div>`).join('')}</div>`;
+  }
+  return html;
+}
+
+function renderProject(p){
+  const pills = [];
+  if(p.status) pills.push(`<span class="pill pill-status">${p.status}</span>`);
+  if(p.year) pills.push(`<span class="pill pill-year">${p.year}</span>`);
+  const badges = (p.badges || []).map(b => `<div class="badge">${icons.trophy}<span>${b}</span></div>`).join('');
+  const tech = (p.tech || []).map(t => `<div class="tech-row"><span class="tech-key">${t.k}</span><span class="tech-value">${t.v}</span></div>`).join('');
+  return `
+  <article class="project-card reveal">
+    ${renderMedia(p.media)}
+    <div class="project-body">
+      <div class="project-top">
+        <h3 class="project-title">${p.title}</h3>
+        <div class="project-pills">${pills.join('')}</div>
+      </div>
+      ${p.role ? `<p class="project-role">${p.role}</p>` : ''}
+      <p class="project-summary">${p.summary}</p>
+      <div class="highlights">${p.highlights.map(h => `<div class="highlight-item">${h}</div>`).join('')}</div>
+      ${badges ? `<div class="badges-row">${badges}</div>` : ''}
+      <button class="tech-toggle" aria-expanded="false">
+        ${icons.chevron}
+        View technical details
+      </button>
+      <div class="tech-panel">
+        <div class="tech-panel-inner">
+          <div class="tech-rows">${tech}</div>
+        </div>
+      </div>
+    </div>
+  </article>`;
+}
+
+function renderOrg(org){
+  return `
+  <section class="org-section" id="${org.slug}">
+    <div class="container">
+      <div class="org-header reveal">
+        <span class="org-path">${org.path}</span>
+        <h2 class="org-title">${org.name}</h2>
+        <p class="org-desc">${org.desc}</p>
+      </div>
+      <div class="project-list">${org.projects.map(renderProject).join('')}</div>
+    </div>
+  </section>`;
+}
+
+document.getElementById('orgSections').innerHTML = orgs.map(renderOrg).join('');
+
+document.getElementById('skillsGrid').innerHTML = skillGroups.map(g => `
+  <div class="skill-group reveal">
+    <div class="skill-group-path">${g.path}</div>
+    <div class="tag-pills">${g.tags.map(t => `<span class="tag-pill">${t}</span>`).join('')}</div>
+  </div>
+`).join('');
+
+document.getElementById('activityList').innerHTML = activities.map(a => `
+  <div class="activity-card reveal">
+    <div class="activity-icon">${icons[a.icon]}</div>
+    <div>
+      <div class="activity-top">
+        <span class="activity-title">${a.title}</span>
+        <span class="activity-year">${a.year}</span>
+      </div>
+      <p class="activity-desc">${a.desc}</p>
+    </div>
+  </div>
+`).join('');
+
+const navLabels = {axis:'axis', adri:'adri', fablab:'fablab', freelance:'freelance', archetype:'archetype', personal:'personal', activities:'activities'};
+const navList = orgs.map(o => ({slug:o.slug, name:navLabels[o.slug]}));
+navList.push({slug:'activities', name:navLabels.activities});
+document.getElementById('navLinks').innerHTML = navList.map(n => `<a href="#${n.slug}" class="nav-link" data-slug="${n.slug}">${n.name}</a>`).join('');
+document.getElementById('mobileMenuLinks').innerHTML = navList.map(n => `<a href="#${n.slug}"><span>~/</span>${n.name}</a>`).join('');
+document.getElementById('mobileMenuFoot').innerHTML = `
+  <a class="hero-link" href="mailto:hello@yourname.dev" style="color:var(--text-dim)">Email</a>
+  <a class="hero-link" href="https://github.com/yourusername" target="_blank" rel="noopener" style="color:var(--text-dim)">GitHub</a>
+  <a class="hero-link" href="https://linkedin.com/in/yourname" target="_blank" rel="noopener" style="color:var(--text-dim)">LinkedIn</a>
+`;
+
+document.querySelectorAll('.project-body').forEach(body => {
+  const toggle = body.querySelector('.tech-toggle');
+  const card = body.closest('.project-card');
+  toggle.addEventListener('click', () => {
+    const isOpen = card.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', String(isOpen));
+  });
+});
+
+const menuToggle = document.getElementById('menuToggle');
+const menuClose = document.getElementById('menuClose');
+const mobileMenu = document.getElementById('mobileMenu');
+function openMenu(){ mobileMenu.classList.add('open'); menuToggle.setAttribute('aria-expanded','true'); document.body.style.overflow='hidden'; }
+function closeMenu(){ mobileMenu.classList.remove('open'); menuToggle.setAttribute('aria-expanded','false'); document.body.style.overflow=''; }
+menuToggle.addEventListener('click', openMenu);
+menuClose.addEventListener('click', closeMenu);
+mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
+
+const navLinkEls = document.querySelectorAll('.nav-link');
+const sections = navList.map(n => document.getElementById(n.slug)).filter(Boolean);
+const navObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    const link = document.querySelector(`.nav-link[data-slug="${entry.target.id}"]`);
+    if(!link) return;
+    if(entry.isIntersecting){
+      navLinkEls.forEach(l => l.classList.remove('active'));
+      link.classList.add('active');
+    }
+  });
+}, {rootMargin:'-90px 0px -70% 0px'});
+sections.forEach(s => navObserver.observe(s));
+
+const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      entry.target.classList.add('visible');
+      revealObserver.unobserve(entry.target);
+    }
+  });
+}, {threshold:0.1});
+document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+if(reduceMotion){
+  document.querySelectorAll('.reveal').forEach(el => el.classList.add('visible'));
+}
+
+const cmdText = 'cat profile.json';
+const typedCmd = document.getElementById('typedCmd');
+const typeCursor = document.getElementById('typeCursor');
+const termOutput = document.getElementById('termOutput');
+if(reduceMotion){
+  typedCmd.textContent = cmdText;
+  termOutput.classList.add('show');
+} else {
+  let i = 0;
+  const typer = setInterval(() => {
+    typedCmd.textContent = cmdText.slice(0, i);
+    i++;
+    if(i > cmdText.length){
+      clearInterval(typer);
+      setTimeout(() => termOutput.classList.add('show'), 200);
+    }
+  }, 55);
+}
+
+document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
