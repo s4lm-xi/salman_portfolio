@@ -3,32 +3,41 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Your Name — AI Engineer</title>
-<meta name="description" content="AI Engineer specializing in LLMs, RAG, computer vision, embedded AI, and cloud infrastructure. Portfolio of production systems, award-winning hardware, and independent research.">
-<meta property="og:title" content="Your Name — AI Engineer">
+<title>Salman Sheikh — AI Engineer</title>
+<meta name="description" content="Salman Sheikh — AI Engineer specializing in LLMs, RAG, computer vision, embedded AI, and cloud infrastructure. Portfolio of production systems, award-winning hardware, and independent research.">
+<meta property="og:title" content="Salman Sheikh — AI Engineer">
 <meta property="og:description" content="LLMs, RAG, computer vision, embedded AI, agents, and cloud infrastructure — projects from ESP32 edge devices to terabyte-scale RAG systems.">
 <meta property="og:type" content="website">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%230a0f0d'/%3E%3Ctext x='50' y='67' font-size='52' font-family='monospace' font-weight='700' fill='%233ee08a' text-anchor='middle'%3E%3E_%3C/text%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%230e723c'/%3E%3Ctext x='50' y='67' font-size='52' font-family='monospace' font-weight='700' fill='%23ffffff' text-anchor='middle'%3E%3E_%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{
-  --bg:#0a0f0d;
-  --bg-soft:#0d1310;
-  --surface:#121a17;
-  --surface-2:#161f1b;
-  --border:#20302a;
-  --border-strong:#2c4038;
-  --text:#eaf2ec;
-  --text-dim:#9fb3a8;
-  --text-faint:#7a9184;
-  --accent:#3ee08a;
-  --accent-2:#8ff5c3;
-  --accent-soft:#12301f;
-  --accent-soft-border:#1f4a32;
-  --amber:#f0b25e;
-  --amber-soft:#2f2211;
+  --bg:#f9fbfa;
+  --bg-soft:#edf2ed;
+  --surface:#ffffff;
+  --surface-2:#f6faf8;
+  --border:#d9e2dc;
+  --border-strong:#c5d3ca;
+  --text:#1a221e;
+  --text-dim:#536259;
+  --text-faint:#708278;
+  --accent:#159a52;
+  --accent-strong:#0e723c;
+  --accent-text:#0c6636;
+  --accent-soft:#e6f6ec;
+  --accent-soft-border:#b7e3c7;
+  --amber:#b3690b;
+  --amber-text:#8f5209;
+  --amber-soft:#fdf1e0;
+  --amber-border:#f0d4a6;
+  --ink:#0a0f0d;
+  --ink-surface:#0d1310;
+  --ink-surface-2:#121c17;
+  --ink-border:#20302a;
+  --ink-text:#eaf2ec;
+  --ink-text-dim:#9fb3a8;
   --font-display:'Space Grotesk',-apple-system,sans-serif;
   --font-body:'Inter',-apple-system,sans-serif;
   --font-mono:'JetBrains Mono',ui-monospace,monospace;
@@ -36,6 +45,8 @@
   --radius:14px;
   --radius-sm:8px;
   --ease:cubic-bezier(.22,.9,.3,1);
+  --shadow-sm:0 1px 2px rgba(16,25,21,0.04), 0 6px 16px -10px rgba(16,25,21,0.08);
+  --shadow-md:0 8px 24px -12px rgba(16,25,21,0.14), 0 2px 6px -2px rgba(16,25,21,0.06);
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
@@ -55,8 +66,8 @@ body::before{
   pointer-events:none;
   z-index:0;
   background-image:
-    linear-gradient(rgba(62,224,138,0.035) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(62,224,138,0.035) 1px, transparent 1px);
+    linear-gradient(rgba(14,114,60,0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(14,114,60,0.05) 1px, transparent 1px);
   background-size:44px 44px;
   mask-image:radial-gradient(ellipse 80% 50% at 50% 0%, #000 20%, transparent 75%);
 }
@@ -67,11 +78,11 @@ button{font:inherit;color:inherit;background:none;border:none;cursor:pointer}
 h1,h2,h3,h4{font-family:var(--font-display);font-weight:600;line-height:1.15;letter-spacing:-0.01em}
 .container{max-width:960px;margin:0 auto;padding:0 24px;position:relative;z-index:1}
 section{position:relative;z-index:1}
-::selection{background:var(--accent-soft);color:var(--accent-2)}
-a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
+::selection{background:var(--accent-soft);color:var(--accent-text)}
+a:focus-visible,button:focus-visible{outline:2px solid var(--accent-strong);outline-offset:3px;border-radius:4px}
 .skip-link{
   position:absolute;left:16px;top:-60px;
-  background:var(--accent);color:#06130c;
+  background:var(--accent-strong);color:#fff;
   padding:10px 16px;border-radius:8px;font-family:var(--font-mono);font-size:13px;font-weight:600;
   z-index:200;transition:top .25s var(--ease);
 }
@@ -81,7 +92,7 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var
   position:fixed;top:0;left:0;right:0;z-index:100;
   height:var(--nav-h);
   display:flex;align-items:center;
-  background:rgba(10,15,13,0.72);
+  background:rgba(248,250,249,0.78);
   backdrop-filter:blur(14px) saturate(140%);
   -webkit-backdrop-filter:blur(14px) saturate(140%);
   border-bottom:1px solid var(--border);
@@ -91,7 +102,7 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var
   font-family:var(--font-mono);font-weight:600;font-size:15px;color:var(--text);
   display:flex;align-items:center;gap:8px;
 }
-.brand-dot{color:var(--accent)}
+.brand-dot{color:var(--accent-text)}
 .nav-links{display:flex;align-items:center;gap:28px}
 .nav-link{
   font-family:var(--font-mono);font-size:13px;color:var(--text-dim);
@@ -100,23 +111,23 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var
 }
 .nav-link::before{content:'~/'}
 .nav-link::after{
-  content:'';position:absolute;left:0;bottom:-3px;width:0;height:1px;background:var(--accent);
+  content:'';position:absolute;left:0;bottom:-3px;width:0;height:1px;background:var(--accent-strong);
   transition:width .25s var(--ease);
 }
 .nav-link:hover,.nav-link.active{color:var(--text)}
 .nav-link:hover::after,.nav-link.active::after{width:100%}
 .nav-cta{
   font-family:var(--font-mono);font-size:12.5px;font-weight:600;
-  color:var(--bg);background:var(--accent);
+  color:#fff;background:var(--accent-strong);
   padding:9px 16px;border-radius:7px;
   transition:transform .2s var(--ease),box-shadow .2s var(--ease);
   white-space:nowrap;
 }
-.nav-cta:hover{transform:translateY(-1px);box-shadow:0 8px 20px -8px rgba(62,224,138,0.55)}
+.nav-cta:hover{transform:translateY(-1px);box-shadow:0 8px 20px -8px rgba(14,114,60,0.45)}
 .menu-toggle{display:none;padding:8px;color:var(--text)}
 .mobile-menu{
   position:fixed;inset:0;z-index:150;
-  background:rgba(8,12,10,0.98);
+  background:rgba(248,250,249,0.98);
   backdrop-filter:blur(10px);
   display:flex;flex-direction:column;
   padding:24px;
@@ -130,7 +141,7 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var
   font-family:var(--font-mono);font-size:26px;color:var(--text);
   padding:14px 4px;border-bottom:1px solid var(--border);
 }
-.mobile-menu-links a span{color:var(--accent)}
+.mobile-menu-links a span{color:var(--accent-text)}
 .mobile-menu-foot{display:flex;gap:18px;padding-top:16px}
 
 .btn{
@@ -139,25 +150,25 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var
   padding:13px 22px;border-radius:9px;
   transition:transform .2s var(--ease),box-shadow .2s var(--ease),border-color .2s var(--ease),background .2s var(--ease);
 }
-.btn-primary{background:var(--accent);color:#06130c}
-.btn-primary:hover{transform:translateY(-2px);box-shadow:0 12px 28px -10px rgba(62,224,138,0.55)}
-.btn-ghost{border:1px solid var(--border-strong);color:var(--text)}
-.btn-ghost:hover{border-color:var(--accent);color:var(--accent-2);transform:translateY(-2px)}
+.btn-primary{background:var(--accent-strong);color:#fff;box-shadow:var(--shadow-sm)}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 14px 28px -12px rgba(14,114,60,0.45)}
+.btn-ghost{border:1px solid var(--border-strong);color:var(--text);background:var(--surface)}
+.btn-ghost:hover{border-color:var(--accent-strong);color:var(--accent-text);transform:translateY(-2px)}
 .btn svg{width:15px;height:15px}
 
 .hero{padding:calc(var(--nav-h) + 64px) 0 80px}
 .hero-grid{display:grid;grid-template-columns:1.35fr 1fr;gap:56px;align-items:start}
 .eyebrow{
-  font-family:var(--font-mono);font-size:13px;color:var(--accent);
+  font-family:var(--font-mono);font-size:13px;color:var(--accent-text);
   display:inline-flex;align-items:center;gap:9px;margin-bottom:20px;
 }
 .eyebrow-dot{width:7px;height:7px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 4px var(--accent-soft);animation:pulse 2.4s ease-in-out infinite}
 @keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
 .hero-name{font-size:clamp(2.5rem,5.4vw,4.1rem);font-weight:700;letter-spacing:-0.02em;margin-bottom:10px}
 .hero-name em{
-  font-style:normal;color:var(--accent-2);
-  background:linear-gradient(180deg,transparent 62%,var(--accent-soft) 62%);
-  padding:0 2px;
+  font-style:normal;color:var(--accent-text);
+  background:var(--accent-soft);
+  padding:0 6px;border-radius:6px;
 }
 .hero-role{
   font-family:var(--font-mono);font-size:clamp(1.05rem,2vw,1.3rem);color:var(--text-dim);
@@ -176,68 +187,68 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var
   font-family:var(--font-mono);font-size:13px;color:var(--text-dim);
   transition:color .2s var(--ease);
 }
-.hero-link:hover{color:var(--accent-2)}
+.hero-link:hover{color:var(--accent-text)}
 .hero-link svg{width:17px;height:17px}
 
 .hero-side{display:flex;flex-direction:column;gap:20px}
 .photo-frame{
   position:relative;aspect-ratio:4/5;border-radius:var(--radius);
-  background:var(--surface);border:1px solid var(--border);
-  overflow:hidden;
+  background:#1a1a1a;border:1px solid var(--border);
+  overflow:hidden;box-shadow:var(--shadow-md);
 }
-.photo-frame img{width:100%;height:100%;object-fit:cover}
+.photo-frame img{width:100%;height:100%;object-fit:contain}
 .photo-placeholder{
   position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;
   color:var(--text-faint);text-align:center;padding:20px;
   background:
-    linear-gradient(135deg, rgba(62,224,138,0.05), transparent 60%),
-    repeating-linear-gradient(135deg, rgba(255,255,255,0.015) 0 2px, transparent 2px 14px);
+    linear-gradient(135deg, rgba(14,114,60,0.05), transparent 60%),
+    repeating-linear-gradient(135deg, rgba(16,25,21,0.02) 0 2px, transparent 2px 14px);
 }
 .photo-placeholder svg{width:38px;height:38px;color:var(--text-faint)}
 .photo-placeholder strong{font-family:var(--font-mono);font-size:12.5px;color:var(--text-dim);letter-spacing:0.02em}
 .photo-placeholder span{font-size:11.5px;font-family:var(--font-mono)}
-.frame-corner{position:absolute;width:18px;height:18px;border-color:var(--accent);opacity:.7}
+.frame-corner{position:absolute;width:18px;height:18px;border-color:var(--accent-strong);opacity:.65}
 .frame-corner.tl{top:10px;left:10px;border-top:2px solid;border-left:2px solid}
 .frame-corner.tr{top:10px;right:10px;border-top:2px solid;border-right:2px solid}
 .frame-corner.bl{bottom:10px;left:10px;border-bottom:2px solid;border-left:2px solid}
 .frame-corner.br{bottom:10px;right:10px;border-bottom:2px solid;border-right:2px solid}
 
 .terminal{
-  border:1px solid var(--border);border-radius:var(--radius);
-  background:var(--surface);overflow:hidden;
+  border:1px solid var(--ink-border);border-radius:var(--radius);
+  background:var(--ink-surface);overflow:hidden;box-shadow:var(--shadow-md);
 }
 .terminal-bar{
   display:flex;align-items:center;gap:8px;padding:11px 14px;
-  background:var(--surface-2);border-bottom:1px solid var(--border);
+  background:var(--ink-surface-2);border-bottom:1px solid var(--ink-border);
 }
 .tdot{width:9px;height:9px;border-radius:50%}
 .tdot.r{background:#e0665c}.tdot.y{background:#e0b95c}.tdot.g{background:#5cd48a}
 .terminal-title{
-  font-family:var(--font-mono);font-size:11.5px;color:var(--text-faint);
+  font-family:var(--font-mono);font-size:11.5px;color:var(--ink-text-dim);
   margin-left:6px;
 }
 .terminal-body{padding:18px 18px 20px;font-family:var(--font-mono);font-size:13px}
-.term-line{color:var(--text-dim);display:flex;gap:8px;flex-wrap:wrap;min-height:1.4em}
-.term-line .prompt{color:var(--accent)}
-.cursor{display:inline-block;width:7px;background:var(--accent-2);margin-left:2px;animation:blink 1s steps(1) infinite}
+.term-line{color:var(--ink-text-dim);display:flex;gap:8px;flex-wrap:wrap;min-height:1.4em}
+.term-line .prompt{color:#3ee08a}
+.cursor{display:inline-block;width:7px;background:#8ff5c3;margin-left:2px;animation:blink 1s steps(1) infinite}
 @keyframes blink{50%{opacity:0}}
 .term-output{margin-top:12px;opacity:0;transform:translateY(4px);transition:opacity .5s var(--ease),transform .5s var(--ease)}
 .term-output.show{opacity:1;transform:translateY(0)}
 .term-row{display:flex;gap:6px;padding:2px 0}
-.term-key{color:var(--accent)}
-.term-punc{color:var(--text-faint)}
+.term-key{color:#3ee08a}
+.term-punc{color:#5f7469}
 .term-str{color:#a9c9e8}
-.term-num{color:var(--amber)}
-.term-brace{color:var(--text-faint)}
+.term-num{color:#f0b25e}
+.term-brace{color:#5f7469}
 
 .skills{padding:20px 0 90px}
 .skills-head{display:flex;align-items:baseline;gap:12px;margin-bottom:34px;flex-wrap:wrap}
-.skills-head .path{font-family:var(--font-mono);color:var(--accent);font-size:14px}
+.skills-head .path{font-family:var(--font-mono);color:var(--accent-text);font-size:14px}
 .skills-head h2{font-size:1.5rem}
 .skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:22px}
 .skill-group{
   border:1px solid var(--border);border-radius:var(--radius-sm);
-  background:var(--surface);padding:18px 18px 16px;
+  background:var(--surface);padding:18px 18px 16px;box-shadow:var(--shadow-sm);
 }
 .skill-group-path{font-family:var(--font-mono);font-size:12px;color:var(--text-faint);margin-bottom:12px}
 .tag-pills{display:flex;flex-wrap:wrap;gap:8px}
@@ -246,38 +257,38 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var
   border:1px solid var(--border-strong);border-radius:6px;padding:5px 10px;
   transition:border-color .2s var(--ease),color .2s var(--ease);
 }
-.tag-pill:hover{border-color:var(--accent);color:var(--accent-2)}
+.tag-pill:hover{border-color:var(--accent-strong);color:var(--accent-text)}
 
-.org-section{padding:64px 0;scroll-margin-top:calc(var(--nav-h) + 16px);border-top:1px solid var(--border)}
+.org-section{padding:64px 0;scroll-margin-top:calc(var(--nav-h) + 16px);border-top:2px solid #a7bba9}
 .org-header{margin-bottom:38px}
-.org-path{font-family:var(--font-mono);color:var(--accent);font-size:14px;display:block;margin-bottom:8px}
+.org-path{font-family:var(--font-mono);color:var(--accent-text);font-size:14px;display:block;margin-bottom:8px}
 .org-title{font-size:clamp(1.7rem,3.4vw,2.35rem);margin-bottom:10px}
 .org-desc{color:var(--text-dim);max-width:62ch;font-size:15px}
 .project-list{display:flex;flex-direction:column;gap:26px}
 
 .project-card{
-  border:1px solid var(--border);border-radius:var(--radius);
-  background:var(--surface);overflow:hidden;
-  transition:border-color .3s var(--ease),transform .3s var(--ease),box-shadow .3s var(--ease);
+  border:2px solid #a7bba9;border-radius:var(--radius);
+  background:var(--surface);overflow:hidden;box-shadow:var(--shadow-sm);
+  transition:border-color .3s var(--ease),box-shadow .3s var(--ease);
 }
-.project-card:hover{border-color:var(--border-strong);box-shadow:0 24px 48px -30px rgba(0,0,0,0.6)}
+.project-card:hover{border-color:var(--accent-strong);box-shadow:var(--shadow-md)}
 
 .media-primary{
-  position:relative;aspect-ratio:16/9;background:var(--bg-soft);
+  position:relative;aspect-ratio:16/9;background:#111111;
   border-bottom:1px solid var(--border);overflow:hidden;
 }
-.media-primary img,.media-primary video{width:100%;height:100%;object-fit:cover}
+.media-primary img,.media-primary video{width:100%;height:100%;object-fit:contain}
 .media-placeholder{
   position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;
   color:var(--text-faint);text-align:center;padding:16px;
-  background:repeating-linear-gradient(135deg, rgba(255,255,255,0.014) 0 2px, transparent 2px 16px);
+  background:repeating-linear-gradient(135deg, rgba(16,25,21,0.02) 0 2px, transparent 2px 16px);
 }
 .media-placeholder svg{width:26px;height:26px}
 .media-placeholder .mtype{font-family:var(--font-mono);font-size:10.5px;letter-spacing:0.08em;text-transform:uppercase;color:var(--text-faint)}
 .media-placeholder .mcap{font-size:13px;color:var(--text-dim);max-width:34ch}
 .media-extra{display:grid;grid-template-columns:repeat(auto-fit,minmax(110px,1fr));gap:1px;background:var(--border)}
-.media-tile{position:relative;aspect-ratio:1/1;background:var(--bg-soft);overflow:hidden}
-.media-tile img,.media-tile video{width:100%;height:100%;object-fit:cover}
+.media-tile{position:relative;aspect-ratio:1/1;background:#111111;overflow:hidden}
+.media-tile img,.media-tile video{width:100%;height:100%;object-fit:contain}
 .media-tile .media-placeholder{padding:8px;gap:6px}
 .media-tile .media-placeholder svg{width:18px;height:18px}
 .media-tile .mcap{font-size:10.5px;max-width:none}
@@ -290,20 +301,29 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var
   font-family:var(--font-mono);font-size:11px;letter-spacing:0.02em;
   padding:4px 10px;border-radius:20px;white-space:nowrap;
 }
-.pill-status{background:var(--accent-soft);color:var(--accent-2);border:1px solid var(--accent-soft-border)}
+.pill-status{background:var(--accent-soft);color:var(--accent-text);border:1px solid var(--accent-soft-border)}
 .pill-year{background:transparent;color:var(--text-faint);border:1px solid var(--border-strong)}
 .project-role{font-family:var(--font-mono);font-size:12.5px;color:var(--text-faint);margin-bottom:14px}
 .project-summary{color:var(--text-dim);margin-bottom:18px;font-size:15px}
 .highlights{display:flex;flex-direction:column;gap:9px;margin-bottom:18px}
 .highlight-item{display:flex;gap:10px;font-size:14.5px;color:var(--text)}
-.highlight-item::before{content:'›';color:var(--accent);font-family:var(--font-mono);font-weight:700;line-height:1.5}
+.highlight-item::before{content:'›';color:var(--accent-strong);font-family:var(--font-mono);font-weight:700;line-height:1.5}
 .badges-row{display:flex;flex-direction:column;gap:8px;margin-bottom:18px}
 .badge{
   display:flex;gap:10px;align-items:flex-start;
-  background:var(--amber-soft);border:1px solid #4a3618;
-  border-radius:8px;padding:10px 12px;font-size:13px;color:#f2d3a0;
+  background:var(--amber-soft);border:1px solid var(--amber-border);
+  border-radius:8px;padding:10px 12px;font-size:13px;color:var(--amber-text);
 }
 .badge svg{width:15px;height:15px;flex-shrink:0;margin-top:2px;color:var(--amber)}
+.docs-row{display:flex;flex-wrap:wrap;gap:14px;margin-bottom:18px}
+.doc-link{
+  display:inline-flex;align-items:center;gap:7px;
+  font-family:var(--font-mono);font-size:12.5px;color:var(--accent-text);
+  border:1px solid var(--accent-soft-border);background:var(--accent-soft);
+  padding:7px 12px;border-radius:7px;transition:border-color .2s var(--ease);
+}
+.doc-link:hover{border-color:var(--accent-strong)}
+.doc-link svg{width:14px;height:14px}
 
 .tech-toggle{
   display:flex;align-items:center;gap:9px;width:100%;
@@ -311,32 +331,32 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var
   padding-top:16px;border-top:1px solid var(--border);
   transition:color .2s var(--ease);
 }
-.tech-toggle:hover{color:var(--accent-2)}
+.tech-toggle:hover{color:var(--accent-text)}
 .tech-toggle svg{width:13px;height:13px;transition:transform .3s var(--ease)}
 .project-card.open .tech-toggle svg{transform:rotate(180deg)}
-.project-card.open .tech-toggle{color:var(--accent-2)}
+.project-card.open .tech-toggle{color:var(--accent-text)}
 .tech-panel{display:grid;grid-template-rows:0fr;transition:grid-template-rows .38s var(--ease)}
 .project-card.open .tech-panel{grid-template-rows:1fr}
 .tech-panel-inner{overflow:hidden}
 .tech-rows{padding-top:16px;display:flex;flex-direction:column;gap:11px}
 .tech-row{display:flex;gap:14px;font-size:13px;line-height:1.55}
 .tech-key{
-  font-family:var(--font-mono);color:var(--accent);flex:0 0 auto;min-width:150px;
+  font-family:var(--font-mono);color:var(--accent-text);flex:0 0 auto;min-width:150px;
   font-size:12.5px;padding-top:1px;
 }
 .tech-value{color:var(--text-dim)}
 
-.activities{padding:64px 0;scroll-margin-top:calc(var(--nav-h) + 16px);border-top:1px solid var(--border)}
+.activities{padding:64px 0;scroll-margin-top:calc(var(--nav-h) + 16px);border-top:2px solid #a7bba9}
 .activity-list{display:flex;flex-direction:column;gap:16px;margin-top:34px}
 .activity-card{
   border:1px solid var(--border);border-radius:var(--radius-sm);
-  background:var(--surface);padding:20px 22px;
+  background:var(--surface);padding:20px 22px;box-shadow:var(--shadow-sm);
   display:flex;gap:18px;align-items:flex-start;
 }
 .activity-icon{
   width:38px;height:38px;border-radius:9px;flex-shrink:0;
   background:var(--accent-soft);border:1px solid var(--accent-soft-border);
-  display:flex;align-items:center;justify-content:center;color:var(--accent-2);
+  display:flex;align-items:center;justify-content:center;color:var(--accent-text);
 }
 .activity-icon svg{width:18px;height:18px}
 .activity-top{display:flex;gap:12px;align-items:baseline;flex-wrap:wrap;margin-bottom:6px}
@@ -347,7 +367,7 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var
 .cta-band{
   padding:80px 0;text-align:center;border-top:1px solid var(--border);
 }
-.cta-band .path{font-family:var(--font-mono);color:var(--accent);font-size:13px;display:block;margin-bottom:14px}
+.cta-band .path{font-family:var(--font-mono);color:var(--accent-text);font-size:13px;display:block;margin-bottom:14px}
 .cta-band h2{font-size:clamp(1.7rem,3.6vw,2.6rem);margin-bottom:16px}
 .cta-band p{color:var(--text-dim);max-width:52ch;margin:0 auto 30px}
 .cta-band .hero-actions{justify-content:center}
@@ -357,7 +377,7 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var
 .footer-brand{font-family:var(--font-mono);font-size:13px;color:var(--text-faint)}
 .footer-links{display:flex;gap:20px}
 .footer-links a{color:var(--text-dim);transition:color .2s var(--ease)}
-.footer-links a:hover{color:var(--accent-2)}
+.footer-links a:hover{color:var(--accent-text)}
 .footer-links svg{width:18px;height:18px}
 
 .reveal{opacity:0;transform:translateY(18px);transition:opacity .6s var(--ease),transform .6s var(--ease)}
@@ -387,10 +407,10 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var
 
 <nav class="site-nav">
   <div class="container nav-inner">
-    <a href="#top" class="brand"><span class="brand-dot">&gt;</span>_ Your Name</a>
+    <a href="#top" class="brand"><span class="brand-dot">&gt;</span>_ Salman Sheikh</a>
     <div class="nav-links" id="navLinks"></div>
     <div style="display:flex;align-items:center;gap:14px">
-      <a href="resume.pdf" download class="nav-cta" style="display:none" id="navResume">Résumé</a>
+      <a href="assets/resume/resume.pdf" download class="nav-cta">Résumé</a>
       <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="22" height="22"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
       </button>
@@ -414,7 +434,7 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var
   <div class="container hero-grid">
     <div class="hero-content">
       <p class="eyebrow"><span class="eyebrow-dot"></span>Open to AI Engineering roles</p>
-      <h1 class="hero-name">Your <em>Name</em></h1>
+      <h1 class="hero-name">Salman <em>Sheikh</em></h1>
       <p class="hero-role">AI Engineer <span class="sep">·</span> Bahrain <span class="sep">·</span> 23</p>
       <p class="hero-statement">AI Engineer with experience spanning LLMs, RAG, NLP, computer vision, embedded AI, robotics, generative AI, document automation, cloud infrastructure, and AI agents.</p>
       <p class="hero-bio">I'm a 23-year-old AI engineer who likes building things that actually ship — from a Bahraini-dialect LLM with a code sandbox, to a sign-language glove that runs entirely offline on a microcontroller. I've led small engineering teams, deployed production systems for government and institutional clients, and picked up a few national awards along the way. Below is a full breakdown of that work, organized by where it was built.</p>
@@ -423,7 +443,7 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
           View projects
         </a>
-        <a href="resume.pdf" download class="btn btn-ghost">
+        <a href="assets/resume/resume.pdf" download class="btn btn-ghost">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14"/></svg>
           Download résumé
         </a>
@@ -446,18 +466,14 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var
 
     <div class="hero-side">
       <div class="photo-frame">
-        <div class="photo-placeholder">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-8 8-8s8 3.6 8 8"/></svg>
-          <strong>Profile photo</strong>
-          <span>drop an &lt;img&gt; in .photo-frame</span>
-        </div>
+        <img src="assets/profile_photo.jpeg" alt="Profile photo">
         <div class="frame-corner tl"></div><div class="frame-corner tr"></div>
         <div class="frame-corner bl"></div><div class="frame-corner br"></div>
       </div>
       <div class="terminal">
         <div class="terminal-bar">
           <span class="tdot r"></span><span class="tdot y"></span><span class="tdot g"></span>
-          <span class="terminal-title">guest@portfolio — zsh</span>
+          <span class="terminal-title">salman@portfolio — zsh</span>
         </div>
         <div class="terminal-body">
           <p class="term-line"><span class="prompt">$</span> <span id="typedCmd"></span><span class="cursor" id="typeCursor"></span></p>
@@ -503,11 +519,11 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var
     <h2>Let's build something worth shipping.</h2>
     <p>I'm currently looking for AI engineering roles where I can work on LLMs, agents, and production ML systems end to end. Reach out — I reply fast.</p>
     <div class="hero-actions">
-      <a href="mailto:hello@yourname.dev" class="btn btn-primary">
+      <a href="mailto:s4lmsheikh@gmail.com" class="btn btn-primary">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
         Email me
       </a>
-      <a href="resume.pdf" download class="btn btn-ghost">Download résumé</a>
+      <a href="assets/resume/resume.pdf" download class="btn btn-ghost">Download résumé</a>
     </div>
   </div>
 </section>
@@ -515,15 +531,15 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var
 
 <footer class="site-footer">
   <div class="container footer-inner">
-    <span class="footer-brand">© <span id="year"></span> Your Name — built from scratch, deployed on GitHub Pages.</span>
+    <span class="footer-brand">© <span id="year"></span> Salman Sheikh.</span>
     <div class="footer-links">
-      <a href="mailto:hello@yourname.dev" aria-label="Email">
+      <a href="mailto:s4lmsheikh@gmail.com" aria-label="Email">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
       </a>
-      <a href="https://github.com/yourusername" target="_blank" rel="noopener" aria-label="GitHub">
+      <a href="https://github.com/s4lm-xi" target="_blank" rel="noopener" aria-label="GitHub">
         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.58 2 12.25c0 4.53 2.87 8.37 6.84 9.73.5.1.68-.22.68-.49 0-.24-.01-1.04-.01-1.89-2.78.62-3.37-1.21-3.37-1.21-.45-1.18-1.11-1.5-1.11-1.5-.9-.64.07-.63.07-.63 1 .07 1.53 1.05 1.53 1.05.89 1.56 2.34 1.11 2.91.85.09-.66.35-1.11.63-1.36-2.22-.26-4.56-1.14-4.56-5.06 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.31.1-2.72 0 0 .84-.28 2.75 1.05a9.3 9.3 0 0 1 2.5-.35c.85 0 1.71.12 2.5.35 1.91-1.33 2.75-1.05 2.75-1.05.55 1.41.2 2.46.1 2.72.64.72 1.03 1.63 1.03 2.75 0 3.93-2.34 4.79-4.57 5.05.36.32.68.94.68 1.9 0 1.37-.01 2.47-.01 2.81 0 .27.18.6.69.49A10.26 10.26 0 0 0 22 12.25C22 6.58 17.52 2 12 2z"/></svg>
       </a>
-      <a href="https://linkedin.com/in/yourname" target="_blank" rel="noopener" aria-label="LinkedIn">
+      <a href="https://www.linkedin.com/in/salman-sheikh-31x/" target="_blank" rel="noopener" aria-label="LinkedIn">
         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5C4.98 4.88 3.86 6 2.48 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.5 8.25h4V23h-4V8.25zM8.25 8.25h3.83v2.01h.05c.53-1 1.84-2.06 3.79-2.06 4.06 0 4.81 2.67 4.81 6.14V23h-4v-6.7c0-1.6-.03-3.66-2.23-3.66-2.23 0-2.57 1.74-2.57 3.54V23h-4V8.25z"/></svg>
       </a>
     </div>
@@ -538,7 +554,8 @@ const icons = {
   chevron: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M6 9l6 6 6-6"/></svg>',
   award: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="8" r="6"/><path d="M8.5 13.5L7 22l5-3 5 3-1.5-8.5"/></svg>',
   mentor: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 14l9-5-9-5-9 5 9 5z"/><path d="M3 9v6c0 1.5 4 3 9 3s9-1.5 9-3V9"/></svg>',
-  globe: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18 14 14 0 0 1 0-18z"/></svg>'
+  globe: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18 14 14 0 0 1 0-18z"/></svg>',
+  doc: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>'
 };
 
 const skillGroups = [
@@ -555,7 +572,7 @@ const orgs = [
     desc:'Independent AI lab — large language models, agentic systems, and embedded intelligence.',
     projects:[
       {
-        title:'Mashmoom — Bahraini Arabic LLM', year:'2026', status:'In active development',
+        title:'Mashmoom — Bahraini Arabic LLM', year:'2026', status:'Work in progress',
         role:'Team Lead — 6-person team, 3 developers reporting directly; led IT & infrastructure',
         summary:'An independent large language model built specifically for the Bahraini Arabic dialect, trained on proprietary conversational data — since evolved into a full agentic system with tool use and a custom code sandbox.',
         highlights:[
@@ -564,7 +581,7 @@ const orgs = [
           'Deployed on RunPod via Docker + Kubernetes orchestration',
           'Evolved into an agentic system with a custom Docker-based code sandbox and tool-use capabilities'
         ],
-        media:[{type:'image',caption:'Architecture diagram'},{type:'image',caption:'Conversation screenshots'},{type:'video',caption:'Demo — handling a task'}],
+        media:[{type:'image',src:'assets/mashmoom/diagram.png',caption:'Architecture diagram — still in active development'}],
         tech:[
           {k:'Model approach',v:'Custom clustering/classification architecture purpose-built for dialect handling — not a fine-tune of an off-the-shelf LLM'},
           {k:'Training frameworks',v:'PyTorch, Hugging Face Transformers'},
@@ -591,7 +608,14 @@ const orgs = [
           'Innovative Venture Award + Technology Excellence Award, INJAZ Bahrain (2026); nominated for Company of the Year',
           'Featured in a live Bahrain TV interview (2026)'
         ],
-        media:[{type:'image',caption:'Glove hardware photos'},{type:'video',caption:'Gesture-to-speech demo'},{type:'video',caption:'Bahrain TV interview clip'},{type:'image',caption:'Competition & award photos'}],
+        media:[
+          {type:'video',src:'assets/axis/phase_2_glove.mp4',caption:'Glove demo — phase 2'},
+          {type:'image',src:'assets/axis/phase_1_glove.jpeg',caption:'Glove — phase 1 prototype'},
+          {type:'image',src:'assets/axis/team.jpeg',caption:'Team photo'},
+          {type:'image',src:'assets/axis/university.jpeg',caption:'University project origin'},
+          {type:'image',src:'assets/axis/interview.jpeg',caption:'Bahrain TV interview'},
+          {type:'image',src:'assets/axis/awards.jpeg',caption:'Award ceremony'}
+        ],
         tech:[
           {k:'Sensors',v:'Flex sensors, gyroscope, accelerometer'},
           {k:'Gesture model',v:'Custom lightweight neural network built for on-device constraints'},
@@ -616,7 +640,10 @@ const orgs = [
           'Automated pipeline: AI translation → human QA → final client delivery',
           'Built a surrounding ERP/workflow-style platform for translation teams'
         ],
-        media:[{type:'image',caption:'Before/after translated document samples'},{type:'image',caption:'Workflow platform screenshots'}],
+        media:[
+          {type:'image',src:'assets/adri_document_trans/docuemtn_layout.png',caption:'Document layout preservation'},
+          {type:'image',src:'assets/adri_document_trans/flow.jpeg',caption:'Pipeline flow'}
+        ],
         tech:[
           {k:'Format preservation',v:'OCR + layout detection (LayoutLM-style) to identify and preserve tables/structure'},
           {k:'Translation engine',v:'Custom fine-tuned machine translation model'},
@@ -634,7 +661,10 @@ const orgs = [
           'Integrated into a platform for chatting with scholarly papers and research resources',
           'Responses grounded in the underlying academic documents'
         ],
-        media:[{type:'image',caption:'Chatbot UI screenshots'}],
+        media:[
+          {type:'image',src:'assets/adri_rag_chatbot/diagram.png',caption:'Architecture diagram'},
+          {type:'image',src:'assets/adri_rag_chatbot/news.jpeg',caption:'News coverage'}
+        ],
         tech:[
           {k:'Retrieval backend',v:'FAISS, Pinecone, and Elasticsearch combined for retrieval at scale'},
           {k:'Corpus size',v:'1TB+ of PDF/text academic data'},
@@ -650,7 +680,7 @@ const orgs = [
           'Detects plagiarism in both human-written and AI-generated text',
           'Produces plagiarism scores for uploaded assignments'
         ],
-        media:[{type:'image',caption:'Plagiarism report / score screenshot'}],
+        media:[{type:'image',src:'assets/adri_plagiarism_checker/diagram.png',caption:'System diagram'}],
         tech:[
           {k:'Detection method',v:'Embedding similarity search comparing documents via vector embeddings, not just exact-string matches'},
           {k:'Language coverage',v:'22+ languages'},
@@ -666,7 +696,10 @@ const orgs = [
           'Delivered for a Saudi ministry',
           'Full AWS-based infrastructure (SageMaker, EC2, databases)'
         ],
-        media:[{type:'image',caption:'Transcription MVP UI screenshots'}],
+        media:[
+          {type:'image',src:'assets/adri_video_translation/video_frame_screenshot.png',caption:'Transcription MVP'},
+          {type:'image',src:'assets/adri_video_translation/subtitle_excel_screenshot.png',caption:'Subtitle export'}
+        ],
         tech:[
           {k:'ASR engines',v:'AWS Transcribe combined with Whisper for improved multilingual accuracy'},
           {k:'Infrastructure',v:'AWS SageMaker, EC2, cloud databases'},
@@ -688,7 +721,11 @@ const orgs = [
           'Generated summaries and structured results',
           'Delivered to Tamkeen for program evaluation'
         ],
-        media:[{type:'image',caption:'Sample chatbot conversation'},{type:'image',caption:'Feedback summary report'}],
+        media:[
+          {type:'image',src:'assets/fablab_alumni/chat_history.png',caption:'Sample chat history'},
+          {type:'image',src:'assets/fablab_alumni/diagram.png',caption:'System diagram'},
+          {type:'image',src:'assets/fablab_alumni/fabacademyai_website_screenshot.png',caption:'Platform screenshot'}
+        ],
         tech:[
           {k:'Messaging integration',v:'Twilio WhatsApp API'},
           {k:'AI / NLP',v:'OpenAI integration for conversation handling and summarization'},
@@ -705,7 +742,10 @@ const orgs = [
           "Identifies and tracks a specific person, sending real-time movement commands to the trolley's motors",
           'Microcontroller programming to convert AI decisions into physical movement'
         ],
-        media:[{type:'image',caption:'Trolley hardware photos'},{type:'video',caption:'Trolley following a person'}],
+        media:[
+          {type:'image',src:'assets/fablab_smart_trolley/cart_following_person.gif',caption:'Trolley following a person'},
+          {type:'image',src:'assets/fablab_smart_trolley/motor_control.gif',caption:'Motor control'}
+        ],
         tech:[
           {k:'Computer vision stack',v:'YOLO + OpenCV + MediaPipe for detection, face recognition, and tracking'},
           {k:'Sensors',v:'LiDAR plus additional sensors for spatial awareness'},
@@ -728,26 +768,11 @@ const orgs = [
           'Live detection running on a local, on-premise server',
           'Delivered as an MVP / proof of concept to Bahrain Billiards (Manama)'
         ],
-        media:[{type:'image',caption:'Overhead detection demo'}],
+        media:[{type:'image',src:'assets/ai_billiard/video-example.gif',caption:'Overhead detection demo'}],
         tech:[
           {k:'Detection model',v:'YOLO for real-time ball/cue/player/foul detection'},
           {k:'Deployment',v:'Live detection on a local, low-latency server'},
           {k:'Client',v:'Bahrain Billiards, Manama'}
-        ]
-      },
-      {
-        title:'AI Maritime / Ship Detection System', role:'Client: group of graduating marine studies students',
-        summary:'An embedded AI system that detects, classifies, and identifies ships from distant camera footage, fully embedded on a Raspberry Pi.',
-        highlights:[
-          'Detects, recognizes, and classifies ships from distant footage',
-          'Size/type classification and reading of ship labels',
-          'Fully embedded on a Raspberry Pi'
-        ],
-        media:[{type:'image',caption:'Ship detection footage'}],
-        tech:[
-          {k:'Detection model',v:'YOLO, optimized/quantized for Raspberry Pi hardware constraints'},
-          {k:'Capabilities',v:'Type/size classification plus label reading from ship imagery'},
-          {k:'Client context',v:'Built for a group of students graduating from marine studies'}
         ]
       },
       {
@@ -758,7 +783,10 @@ const orgs = [
           'Returns matching frames with date/timestamp',
           'Designed for security and surveillance use cases'
         ],
-        media:[{type:'image',caption:'Search interface demo'}],
+        media:[
+          {type:'image',src:'assets/cctv_ai_chatbot/website_screenshot.png',caption:'Search interface'},
+          {type:'image',src:'assets/cctv_ai_chatbot/diagram.png',caption:'System diagram'}
+        ],
         tech:[
           {k:'Stack',v:'OpenAI + LangChain for query understanding, combined with computer vision for attribute matching'},
           {k:'Matching approach',v:'Detection plus embedding-based matching to translate text into visual search criteria'},
@@ -769,7 +797,7 @@ const orgs = [
   },
   {
     slug:'archetype', path:'~/archetype-foundry/', name:'Archetype Foundry',
-    desc:'Internship project — a fully local, voice-enabled LLM device.',
+    desc:'Internship and partnership work — a fully local voice-enabled LLM device, and computer-vision tooling for robotic pipe inspection.',
     projects:[
       {
         title:'Noodles — Raspberry Pi LLM',
@@ -780,12 +808,30 @@ const orgs = [
           'Text-to-speech for spoken responses',
           "Short-term conversational memory"
         ],
-        media:[],
+        media:[{type:'image',src:'assets/archetype_noodles/analysis_table.png',caption:'Performance analysis'}],
+        docs:[{label:'View technical report (PDF)',href:'assets/archetype_noodles/report.pdf'}],
         tech:[
           {k:'Base model',v:'Gemma, quantized for on-device use'},
           {k:'Local inference',v:'Ollama'},
           {k:'Hardware',v:'Raspberry Pi 4, 4GB RAM, 16GB storage'},
           {k:'Extras',v:'Text-to-speech integration, short-term memory buffer'}
+        ]
+      },
+      {
+        title:'Pipe Defect Detection — Robotic Pipe Inspection AI',
+        role:'Partner: German construction company delivering pipe-inspection robots for ministry infrastructure projects',
+        summary:"An AI system built in partnership with a German construction company whose robots crawl through pipes to inspect them. The system automatically detects defects from the robot's footage and generates timestamped keyframes and notes for engineers — replacing manual, frame-by-frame defect tagging.",
+        highlights:[
+          'Automatically detects and flags defects from pipe-crawling robot footage',
+          'Generates timestamped keyframes and written notes for each detected defect',
+          'Replaces manual, frame-by-frame defect tagging with an automated review workflow'
+        ],
+        media:[{type:'image',src:'assets/pipe_defect/clip_demo.gif',caption:'Defect detection demo'}],
+        tech:[
+          {k:'Detection approach',v:'Computer vision model trained to identify and classify pipe defect types from robot camera footage'},
+          {k:'Output',v:'Auto-generated keyframes with timestamps and defect notes, compiled for engineer review'},
+          {k:'Workflow impact',v:'Replaces manual frame-by-frame review with automated flagging of defect frames'},
+          {k:'Client context',v:'German construction company delivering robotic pipe inspection for ministry infrastructure projects'}
         ]
       }
     ]
@@ -802,7 +848,10 @@ const orgs = [
           'Connected to Gmail, Google Calendar, WhatsApp, and web search',
           'Handles WhatsApp customer support replies, reads emails, adds calendar events, sets reminders, and searches the web'
         ],
-        media:[{type:'image',caption:'OpenClaw assistant demo'}],
+        media:[
+          {type:'image',src:'assets/openclaw/chatbot.png',caption:'Assistant demo'},
+          {type:'image',src:'assets/openclaw/email_sending.png',caption:'Automated email handling'}
+        ],
         tech:[
           {k:'Model',v:'Llama 3, hosted via AWS Bedrock'},
           {k:'Agent framework',v:'OpenClaw'},
@@ -818,7 +867,10 @@ const orgs = [
           "Trained specifically on J.S. Bach's musical patterns",
           'Generates new compositions inspired by learned patterns'
         ],
-        media:[{type:'image',caption:'Generated composition demo'}],
+        media:[
+          {type:'image',src:'assets/lea/website_screenshot.png',caption:'Project site'},
+          {type:'image',src:'assets/lea/model_loss.png',caption:'Training loss curve'}
+        ],
         tech:[
           {k:'Architecture',v:'Generative Adversarial Network (GAN)'},
           {k:'Training data',v:'J.S. Bach compositions / musical patterns'},
@@ -834,7 +886,10 @@ const orgs = [
           'Built with a Raspberry Pi 3, webcam, ultrasonic sensor, and Bluetooth audio output'
         ],
         badges:['2nd place at the competition where it was presented'],
-        media:[{type:'image',caption:'Smart Cane demo'}],
+        media:[
+          {type:'image',src:'assets/smart_cane/cane.jpeg',caption:'Smart Cane hardware'},
+          {type:'image',src:'assets/smart_cane/award.jpeg',caption:'Award photo'}
+        ],
         tech:[
           {k:'Detection approach',v:'Camera-based AI object detection/tracking combined with ultrasonic distance sensing'},
           {k:'Hardware',v:'Raspberry Pi 3, webcam, ultrasonic sensor, Bluetooth headphones'},
@@ -848,23 +903,35 @@ const orgs = [
 const activities = [
   {icon:'globe', title:'Google Foo Bar', year:'2022', desc:"Invited by Google to its invitation-only developer challenge program, solving technical and programming challenges as part of it."},
   {icon:'mentor', title:'BIBF × IGA AI Competition — Mentor & Judge', year:'2024', desc:'Invited as mentor, competition supervisor, and judge. Helped design the AI challenges and guided participants through data analysis, EDA, machine learning, model training, and prediction, submitted via Kaggle.'},
-  {icon:'award', title:'GITEX Dubai', year:'2021', desc:'Represented ADRI as a Bahraini representative at GITEX Dubai, presenting company technologies to potential clients and taking part in business discussions that helped secure potential meetings and contracts.'}
+  {icon:'award', title:'GITEX Dubai (2021) — ADRI', year:'2021', desc:'Represented ADRI as a Bahraini representative at GITEX Dubai, presenting company technologies to potential clients and taking part in business discussions that helped secure potential meetings and contracts.'},
+  {icon:'award', title:'GITEX Dubai (2023) — AXIS Sign Language Glove', year:'2023', desc:'Represented Bahrain at GITEX Dubai with the AXIS Sign Language Glove project. Presented the technology directly to business executives, showcasing a fully offline, battery-powered Arabic/Bahraini sign language translation system and the engineering behind running neural inference on an ESP32 in real time.'}
 ];
 
-function mediaSlot(item, small){
-  const capClass = small ? 'mcap' : 'mcap';
-  return `<div class="media-placeholder">${icons[item.type]}<span class="mtype">${item.type}</span><span class="${capClass}">${item.caption}</span></div>`;
+function fileKind(src){
+  const ext = src.split('.').pop().toLowerCase();
+  if(ext === 'mp4' || ext === 'webm' || ext === 'mov') return 'video';
+  return 'image';
+}
+
+function mediaTag(item){
+  if(!item.src){
+    return `<div class="media-placeholder">${icons[item.type]}<span class="mtype">${item.type}</span><span class="mcap">${item.caption || ''}</span></div>`;
+  }
+  if(fileKind(item.src) === 'video'){
+    return `<video src="${item.src}" autoplay muted loop playsinline controls></video>`;
+  }
+  return `<img src="${item.src}" alt="${item.caption || ''}" loading="lazy" decoding="async">`;
 }
 
 function renderMedia(mediaArr){
   if(!mediaArr || mediaArr.length === 0){
-    return `<div class="media-primary" style="aspect-ratio:21/9">${mediaSlot({type:'image',caption:'Media coming soon'})}</div>`;
+    return `<div class="media-primary" style="aspect-ratio:21/9">${mediaTag({type:'image',caption:'Media coming soon'})}</div>`;
   }
   const primary = mediaArr[0];
   const rest = mediaArr.slice(1);
-  let html = `<div class="media-primary">${mediaSlot(primary)}</div>`;
+  let html = `<div class="media-primary">${mediaTag(primary)}</div>`;
   if(rest.length){
-    html += `<div class="media-extra">${rest.map(m => `<div class="media-tile">${mediaSlot(m, true)}</div>`).join('')}</div>`;
+    html += `<div class="media-extra">${rest.map(m => `<div class="media-tile">${mediaTag(m)}</div>`).join('')}</div>`;
   }
   return html;
 }
@@ -874,6 +941,7 @@ function renderProject(p){
   if(p.status) pills.push(`<span class="pill pill-status">${p.status}</span>`);
   if(p.year) pills.push(`<span class="pill pill-year">${p.year}</span>`);
   const badges = (p.badges || []).map(b => `<div class="badge">${icons.trophy}<span>${b}</span></div>`).join('');
+  const docs = (p.docs || []).map(d => `<a class="doc-link" href="${d.href}" target="_blank" rel="noopener">${icons.doc}${d.label}</a>`).join('');
   const tech = (p.tech || []).map(t => `<div class="tech-row"><span class="tech-key">${t.k}</span><span class="tech-value">${t.v}</span></div>`).join('');
   return `
   <article class="project-card reveal">
@@ -887,6 +955,7 @@ function renderProject(p){
       <p class="project-summary">${p.summary}</p>
       <div class="highlights">${p.highlights.map(h => `<div class="highlight-item">${h}</div>`).join('')}</div>
       ${badges ? `<div class="badges-row">${badges}</div>` : ''}
+      ${docs ? `<div class="docs-row">${docs}</div>` : ''}
       <button class="tech-toggle" aria-expanded="false">
         ${icons.chevron}
         View technical details
@@ -942,9 +1011,9 @@ navList.push({slug:'activities', name:navLabels.activities});
 document.getElementById('navLinks').innerHTML = navList.map(n => `<a href="#${n.slug}" class="nav-link" data-slug="${n.slug}">${n.name}</a>`).join('');
 document.getElementById('mobileMenuLinks').innerHTML = navList.map(n => `<a href="#${n.slug}"><span>~/</span>${n.name}</a>`).join('');
 document.getElementById('mobileMenuFoot').innerHTML = `
-  <a class="hero-link" href="mailto:hello@yourname.dev" style="color:var(--text-dim)">Email</a>
-  <a class="hero-link" href="https://github.com/yourusername" target="_blank" rel="noopener" style="color:var(--text-dim)">GitHub</a>
-  <a class="hero-link" href="https://linkedin.com/in/yourname" target="_blank" rel="noopener" style="color:var(--text-dim)">LinkedIn</a>
+  <a class="hero-link" href="mailto:s4lmsheikh@gmail.com" style="color:var(--text-dim)">Email</a>
+  <a class="hero-link" href="https://github.com/s4lm-xi" target="_blank" rel="noopener" style="color:var(--text-dim)">GitHub</a>
+  <a class="hero-link" href="https://www.linkedin.com/in/salman-sheikh-31x/" target="_blank" rel="noopener" style="color:var(--text-dim)">LinkedIn</a>
 `;
 
 document.querySelectorAll('.project-body').forEach(body => {
