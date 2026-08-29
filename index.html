@@ -383,6 +383,45 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--accent-strong);outl
 .reveal{opacity:0;transform:translateY(18px);transition:opacity .6s var(--ease),transform .6s var(--ease)}
 .reveal.visible{opacity:1;transform:translateY(0)}
 
+/* Lightbox */
+.lightbox{
+  position:fixed;inset:0;z-index:200;
+  display:flex;align-items:center;justify-content:center;
+  background:rgba(10,15,13,0.88);
+  backdrop-filter:blur(5px);-webkit-backdrop-filter:blur(5px);
+  opacity:0;pointer-events:none;
+  transition:opacity .3s var(--ease);
+}
+.lightbox.open{opacity:1;pointer-events:auto}
+.lightbox img{
+  max-width:90vw;max-height:90vh;
+  border-radius:var(--radius);
+  box-shadow:0 24px 60px -20px rgba(16,25,21,0.5);
+  object-fit:contain;
+}
+.lightbox-close{
+  position:absolute;top:24px;right:16px;
+  width:40px;height:40px;
+  border-radius:8px;
+  background:rgba(255,255,255,0.08);border:1px solid var(--ink-border);
+  color:var(--ink-text);
+  display:flex;align-items:center;justify-content:center;
+  cursor:pointer;
+  transition:background .2s var(--ease);
+}
+.lightbox-close:hover{background:rgba(255,255,255,0.14)}
+.lightbox-close svg{width:20px;height:20px}
+.expandable{cursor:pointer}
+.media-primary img.expandable,.media-tile img.expandable{
+  transition:transform .2s var(--ease);
+}
+.media-primary img.expandable:hover,.media-tile img.expandable:hover{
+  transform:scale(1.03)
+}
+@media (prefers-reduced-motion:reduce){
+  .media-primary img.expandable:hover,.media-tile img.expandable:hover{transform:none}
+}
+
 @media (max-width:900px){
   .hero-grid{grid-template-columns:1fr;gap:40px}
   .hero-side{max-width:340px}
@@ -545,6 +584,13 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--accent-strong);outl
     </div>
   </div>
 </footer>
+
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-hidden="true">
+  <button class="lightbox-close" id="lightboxClose" aria-label="Close">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+  </button>
+  <img id="lightboxImg" alt="" loading="lazy" decoding="async">
+</div>
 
 <script>
 const icons = {
@@ -920,7 +966,7 @@ function mediaTag(item){
   if(fileKind(item.src) === 'video'){
     return `<video src="${item.src}" autoplay muted loop playsinline controls></video>`;
   }
-  return `<img src="${item.src}" alt="${item.caption || ''}" loading="lazy" decoding="async">`;
+  return `<img class="expandable" data-full="${item.src}" src="${item.src}" alt="${item.caption || ''}" loading="lazy" decoding="async">`;
 }
 
 function renderMedia(mediaArr){
@@ -1061,6 +1107,48 @@ document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 if(reduceMotion){
   document.querySelectorAll('.reveal').forEach(el => el.classList.add('visible'));
 }
+
+/* Lightbox JavaScript */
+const lightbox = document.getElementById('lightbox');
+const lightboxImg = document.getElementById('lightboxImg');
+const lightboxClose = document.getElementById('lightboxClose');
+
+function openLightbox(src){
+  lightboxImg.src = src;
+  lightbox.classList.add('open');
+  lightbox.setAttribute('aria-hidden', 'false');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeLightbox(){
+  lightbox.classList.remove('open');
+  lightbox.setAttribute('aria-hidden', 'true');
+  document.body.style.overflow = '';
+}
+
+/* Open lightbox on expandable images */
+document.addEventListener('click', (e) => {
+  const target = e.target.closest('.expandable');
+  if(target && target.dataset.full){
+    e.preventDefault();
+    openLightbox(target.dataset.full);
+  }
+});
+
+/* Close lightbox */
+lightboxClose.addEventListener('click', closeLightbox);
+lightbox.addEventListener('click', (e) => {
+  if(e.target === lightbox){
+    closeLightbox();
+  }
+});
+
+/* Close with Escape key */
+document.addEventListener('keydown', (e) => {
+  if(e.key === 'Escape' && lightbox.classList.contains('open')){
+    closeLightbox();
+  }
+});
 
 const cmdText = 'cat profile.json';
 const typedCmd = document.getElementById('typedCmd');
